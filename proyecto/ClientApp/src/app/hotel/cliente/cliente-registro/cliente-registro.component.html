@@ -1,0 +1,40 @@
+<title>REGISTRO CLIENTE</title>
+<br><div align="center"><img src="assets/registrar.png" alt="Logo">
+    <h1>REGISTRO CLIENTE</h1>
+</div><br>
+<div id="divcontainer" class="forms">
+    <form id="formularioRegistro">
+        <label>Cedula</label>
+        <input type="text" id="cedula" name="cedula" [(ngModel)]="cliente.cedula"  placeholder="Cedula">
+        <label >Primer Nombre</label>
+        <input type="text" id="primerNombre" name="primerNombre" [(ngModel)]="cliente.primerNombre" placeholder="Primer Nombre">
+        <label >Segundo Nombre</label>
+        <input type="text" id="segundoNombre" name="segundoNombre" [(ngModel)]="cliente.segundoNombre" placeholder="Segundo Nombre">
+        <label >Primer Apellido</label>
+        <input type="text" id="primerApellido" name="primerApellido" [(ngModel)]="cliente.primerApellido" placeholder="Primer Apellido">
+        <label >Segundo Apellido</label>
+        <input type="text" id="segundoApellido" name="segundoApellido" [(ngModel)]="cliente.segundoApellido" placeholder="Segundo Apellido">
+        <label >Sexo</label>
+        <select id="sexo" name="sexo" [(ngModel)]="cliente.sexo">
+            <option value="seleccionar">Seleccionar</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+        </select> <br>
+        <label >Edad</label><br>
+        <input type="number" id="edad" name="edad" [(ngModel)]="cliente.edad" placeholder="Edad"><br>
+        <label >Email</label>
+        <input type="text" id="email" name="email" [(ngModel)]="cliente.email" placeholder="Email">
+        <label >Telefono</label><br>
+        <input type="number" id="telefono" name="telefono"  [(ngModel)]="cliente.telefono" placeholder="Telefono"><br>
+        <label >Departamento</label>
+        <input type="text" id="departamento" name="departamento" [(ngModel)]="cliente.departamento" placeholder="Departamento"><br>
+        <label >Ciudad</label>
+        <input type="text" id="ciudad" name="ciudad" [(ngModel)]="cliente.ciudad" placeholder="Ciudad">
+    </form>
+</div>
+<br>
+<button  id="divcontainer2" type="button" (click)="add()" class="btn btn-primary" >Guardar</button>
+
+<!--
+    <button  id="divcontainer2" type="button" class="btn btn-primary" (click)="add()">Guardar</button>
+-->

@@ -1,0 +1,55 @@
+<!--
+
+<title>CONSULTAR EMPLEADOS</title>
+<br>
+<div align="center"><img src="assets/consultar.png" alt="Logo"><br>
+    <h1>CONSULTAR EMPLEADOS</h1>
+</div><br>
+
+<form class="form-inline" class="container" id="Buscador">
+    <input class="form-control mr-sm-2" type="search" placeholder="Buscar por Cedula" aria-label="Search">
+    <button class="btn btn-primary" type="submit">Buscar </button>
+</form><br><br>
+
+<button id="divcontainer2" type="button" class="btn btn-primary">Consultar</button>
+
+<div class="table-responsive" id="rcorners1">
+    <table class="table table-bordered" id="myTable" *ngIf='empleados && empleados.length'>
+        <thead>
+            <tr class="thead-dark">
+                <th (click)="sortTable(0)" scope="col">#</th>
+                <th (click)="sortTable(1)">Cedula >> </th>
+                <th (click)="sortTable(2)">Primer Nombre >></th>
+                <th (click)="sortTable(3)">Segundo Nombre >></th>
+                <th (click)="sortTable(4)">Primer Apellido >></th>
+                <th (click)="sortTable(5)">Segundo Apellido >></th>
+                <th (click)="sortTable(6)">Edad >></th>
+                <th (click)="sortTable(7)">Sexo >></th>
+                <th (click)="sortTable(8)">Telefono>></th>
+                <th (click)="sortTable(9)">Ciudad>></th>
+                <th (click)="sortTable(10)">Departamento>></th>
+            </tr>
+        </thead>
+        <tbody id="tbodypulsacion" class="table-primary">
+            <tr *ngFor="let empleado of empleados; index as i ">
+                <td scope="row">{{ i + 1 }}</td>
+                <td>{{ empleado.cedula}} </td>
+                <td>{{ empleado.primerNombre }}</td>
+                <td>{{ empleado.segundoNombre }}</td>
+                <td>{{ empleado.primerApellido }}</td>
+                <td>{{ empleado.SegundoApellido }}</td>
+                <td>{{ empleado.sexo}}</td>
+                <td>{{ empleado.edad}}</td>
+                <td>{{ empleado.telefono}}</td>
+                <td>{{ empleado.email}}</td>
+                <td>{{ empleado.departamento}}</td>
+                <td>{{ empleado.ciudad}}</td>
+                <td>{{ empleado.cargo}}</td>
+                <td>{{ empleado.jornada}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br><br>
+
+-->

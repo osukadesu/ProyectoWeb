@@ -1,0 +1,49 @@
+<title>CONSULTAR CLIENTES</title>
+<br>
+<div align="center"><img src="assets/consultar.png" alt="Logo"><br>
+    <h1>CONSULTAR CLIENTES</h1>
+</div><br>
+
+<form class="form-inline" class="container" id="Buscador">
+    <input class="form-control mr-sm-2" type="search" placeholder="Buscar por Cedula" aria-label="Search">
+    <button class="btn btn-primary" type="submit">Buscar </button>
+</form><br><br>
+
+<!--<button id="divcontainer2" type="button" class="btn btn-primary">Consultar</button>-->
+<div class="table-responsive" id="rcorners1">
+    <table class="table table-bordered" id="myTable" *ngIf='clientes && clientes.length'>
+        <thead>
+            <tr class="thead-dark">
+                <th (click)="sortTable(0)" scope="col">#</th>
+                <th (click)="sortTable(1)">Cedula >> </th>
+                <th (click)="sortTable(2)">Primer Nombre >></th>
+                <th (click)="sortTable(3)">Segundo Nombre >></th>
+                <th (click)="sortTable(4)">Primer Apellido >></th>
+                <th (click)="sortTable(5)">Segundo Apellido >></th>
+                <th (click)="sortTable(6)">Edad >></th>
+                <th (click)="sortTable(7)">Email >></th>
+                <th (click)="sortTable(8)">Sexo >></th>
+                <th (click)="sortTable(9)">Telefono>></th>
+                <th (click)="sortTable(11)">Departamento>></th>
+                <th (click)="sortTable(10)">Ciudad>></th>
+            </tr>
+        </thead>
+        <tbody id="tbodypulsacion" class="table-primary">
+            <tr *ngFor="let cliente of clientes ; index as i ">
+                <td scope="row">{{ i + 1 }}</td>
+                <td>{{ cliente.cedula}} </td>
+                <td>{{ cliente.primerNombre }}</td>
+                <td>{{ cliente.segundoNombre }}</td>
+                <td>{{ cliente.primerApellido }}</td>
+                <td>{{ cliente.SegundoApellido }}</td>
+                <td>{{ cliente.edad}}</td>
+                <td>{{ cliente.email}}</td>
+                <td>{{ cliente.sexo}}</td>
+                <td>{{ cliente.telefono}}</td>
+                <td>{{ cliente.departamento}}</td>
+                <td>{{ cliente.ciudad}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br><br>

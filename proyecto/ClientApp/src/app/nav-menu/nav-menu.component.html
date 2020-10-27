@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="#">INICIO</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/administracion"]'>ADMINISTRACION</a>
+      </li>
+    </ul>
+    <ul id="div02" class="navbar-nav  mt-2 mt-lg-0">
+      <li class="nav-item">
+          <a class="nav-link" [routerLink]='["/login"]' id="navbarTogglerDemo01">
+            Login
+          </a>
+        </li>
+    </ul>
+    <ul id="div03" class="navbar-nav  mt-2 mt-lg-0">
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Mi cuenta
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Editar Perfil</a>
+            <a class="dropdown-item" href="#">Cerrar Sesion</a>
+          </div>
+        </li>
+    </ul>
+    
+  </div>
+</nav>
