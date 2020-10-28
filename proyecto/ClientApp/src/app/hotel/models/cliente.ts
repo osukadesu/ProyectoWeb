@@ -5,9 +5,9 @@ export class Cliente {
     primerApellido: string;
     segundoApellido: string;
     sexo: string;
-    edad: string;
+    edad: number;
     email: string;
-    telefono: string;
+    telefono: number;
     departamento: string;
     ciudad: string;
 }
