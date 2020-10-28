@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ck8EJCDgBkkVY2R50SyY1rNhRK25/AdY5+q45ijv8MTPdq5qE8TY/BqUzEysC0eg/HSfV9oU60/XhLpu2ZX0TQ==",
+  "dgSpecHash": "pu8l121p6aWk/Lp8uV1OiHQpcxxiffbSd/p6yBMIfVxVGgdQn6M8cPF6XHH9+awbuQmypF/YTfOh2hR2AaJfhA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Logica\\Logica.csproj",
+  "projectFilePath": "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Logica\\Logica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Osuka\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Osuka\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

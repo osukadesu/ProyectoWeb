@@ -6354,11 +6354,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Datos\\Datos.csproj",
+      "projectUniqueName": "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Datos\\Datos.csproj",
       "projectName": "Datos",
-      "projectPath": "c:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Datos\\Datos.csproj",
+      "projectPath": "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Datos\\Datos.csproj",
       "packagesPath": "C:\\Users\\Osuka\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Datos\\obj\\",
+      "outputPath": "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Datos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Osuka\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6372,8 +6372,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "c:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj": {
-              "projectPath": "c:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj"
+            "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj"
             }
           }
         }

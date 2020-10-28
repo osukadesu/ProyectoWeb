@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xwoVbgTgq6QUTtvr8QQNTJANDQqx4yUYcbPNDORrPriu7wNhCQPFVvWJLqOsJOpcm+0ebauopA4gV4+vGKc5LQ==",
+  "dgSpecHash": "zbadPQUC9i/9VKwXe75Y98fiMijoPqjLPq8TSi3CCuC9cPjOASvG8aD/h0sa4kHwQnLDAe8cQuniy97oLLzzVg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Osuka\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Osuka\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
