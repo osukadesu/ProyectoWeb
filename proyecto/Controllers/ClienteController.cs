@@ -76,6 +76,7 @@ public class ClienteController : ControllerBase
             Email = clienteInput.Email,
             Edad = clienteInput.Edad,
             Sexo = clienteInput.Sexo,
+            Telefono = clienteInput.Telefono,
             Departamento = clienteInput.Departamento,
             Ciudad = clienteInput.Ciudad,
         };

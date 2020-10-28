@@ -29,6 +29,7 @@ namespace HotelNeruda.Models
             Email = cliente.Email;
             Edad = cliente.Edad;
             Sexo = cliente.Sexo;
+            Telefono = cliente.Telefono;
             Departamento = cliente.Departamento;
             Ciudad = cliente.Ciudad;
         }

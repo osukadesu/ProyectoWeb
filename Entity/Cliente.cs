@@ -13,7 +13,7 @@ namespace Entity
         public string Sexo { get; set; }
         public int Edad { get; set; }
         public int Telefono { get; set; }
-         public string Email { get; set; }
+        public string Email { get; set; }
         public string Departamento { get; set; }
         public string Ciudad { get; set; }
 

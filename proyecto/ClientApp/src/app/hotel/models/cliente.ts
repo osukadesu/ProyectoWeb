@@ -7,7 +7,7 @@ export class Cliente {
     sexo: string;
     edad: string;
     email: string;
-    telefono: number;
+    telefono: string;
     departamento: string;
     ciudad: string;
 }
