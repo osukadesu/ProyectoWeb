@@ -14,17 +14,17 @@
         <thead>
             <tr class="thead-dark">
                 <th (click)="sortTable(0)" scope="col">#</th>
-                <th (click)="sortTable(1)">Cedula >> </th>
-                <th (click)="sortTable(2)">Primer Nombre >></th>
-                <th (click)="sortTable(3)">Segundo Nombre >></th>
-                <th (click)="sortTable(4)">Primer Apellido >></th>
-                <th (click)="sortTable(5)">Segundo Apellido >></th>
-                <th (click)="sortTable(6)">Edad >></th>
-                <th (click)="sortTable(7)">Email >></th>
-                <th (click)="sortTable(8)">Sexo >></th>
-                <th (click)="sortTable(9)">Telefono>></th>
-                <th (click)="sortTable(10)">Departamento>></th>
-                <th (click)="sortTable(11)">Ciudad>></th>
+                <th (click)="sortTable(1)">Cedula</th>
+                <th (click)="sortTable(2)">Primer Nombre</th>
+                <th (click)="sortTable(3)">Segundo Nombre</th>
+                <th (click)="sortTable(4)">Primer Apellido</th>
+                <th (click)="sortTable(5)">Segundo Apellido</th>
+                <th (click)="sortTable(6)">Edad</th>
+                <th (click)="sortTable(7)">Email</th>
+                <th (click)="sortTable(8)">Sexo</th>
+                <th (click)="sortTable(9)">Telefono</th>
+                <th (click)="sortTable(10)">Departamento</th>
+                <th (click)="sortTable(11)">Ciudad</th>
                 <th (click)="sortTable(12)">Modificar/Eliminar</th>
             </tr>
         </thead>
@@ -42,7 +42,7 @@
                 <td>{{ cliente.telefono }}</td>
                 <td>{{ cliente.departamento }}</td>
                 <td>{{ cliente.ciudad }}</td>
-                <td> <a routerLink='/personaEdicion/{{cliente.cedula}}'>  ver </a></td>
+                <td> <a routerLink='/personaEdicion/{{cliente.cedula}}'>Modificar</a> <button id="divcontainer2" class="btn btn-primary" (click)="delete()">Eliminar</button></td>
             </tr>
         </tbody>
     </table>
