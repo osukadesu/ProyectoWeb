@@ -5,8 +5,7 @@
 </div><br>
 
 <form class="form-inline" class="container" id="Buscador">
-    <input class="form-control mr-sm-2" type="search" placeholder="Buscar por Cedula" aria-label="Search">
-    <button class="btn btn-primary" type="submit">Buscar </button>
+    <input class="form-control mr-sm-2" name="filtroCliente" [(ngModel)]="searchText" type="text" placeholder="Buscar por Cedula" aria-label="Search">
 </form><br><br>
 
 <!--<button id="divcontainer2" type="button" class="btn btn-primary">Consultar</button>-->
@@ -24,24 +23,26 @@
                 <th (click)="sortTable(7)">Email >></th>
                 <th (click)="sortTable(8)">Sexo >></th>
                 <th (click)="sortTable(9)">Telefono>></th>
-                <th (click)="sortTable(11)">Departamento>></th>
-                <th (click)="sortTable(10)">Ciudad>></th>
+                <th (click)="sortTable(10)">Departamento>></th>
+                <th (click)="sortTable(11)">Ciudad>></th>
+                <th (click)="sortTable(12)">Modificar/Eliminar</th>
             </tr>
         </thead>
         <tbody id="tbodypulsacion" class="table-primary">
-            <tr *ngFor="let cliente of clientes ; index as i ">
+            <tr *ngFor="let cliente of clientes|filtroCliente:searchText; index as i ">
                 <td scope="row">{{ i + 1 }}</td>
-                <td>{{ cliente.cedula}} </td>
-                <td>{{ cliente.primerNombre }}</td>
+                <td>{{ cliente.cedula }} </td>
+                <td>{{ cliente.primerNombre}}</td>
                 <td>{{ cliente.segundoNombre }}</td>
                 <td>{{ cliente.primerApellido }}</td>
-                <td>{{ cliente.segundoApellido}}</td>
-                <td>{{ cliente.edad}}</td>
-                <td>{{ cliente.email}}</td>
-                <td>{{ cliente.sexo}}</td>
-                <td>{{ cliente.telefono}}</td>
-                <td>{{ cliente.departamento}}</td>
-                <td>{{ cliente.ciudad}}</td>
+                <td>{{ cliente.segundoApellido }}</td>
+                <td>{{ cliente.edad }}</td>
+                <td>{{ cliente.email }}</td>
+                <td>{{ cliente.sexo }}</td>
+                <td>{{ cliente.telefono }}</td>
+                <td>{{ cliente.departamento }}</td>
+                <td>{{ cliente.ciudad }}</td>
+                <td> <a routerLink='/personaEdicion/{{cliente.cedula}}'>  ver </a></td>
             </tr>
         </tbody>
     </table>

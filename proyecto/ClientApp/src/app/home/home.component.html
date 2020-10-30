@@ -1,67 +1,87 @@
 <style>
+
   a {
-      font-size: 25px;
+    font-size: 25px;
 
-      font-family: Serif;
+    font-family: Serif;
 
-      text-align: center;
+    text-align: center;
 
-      color: #ffffff;
+    color: #ffffff;
   }
 
   h1 {
 
-      font-size: 30px;
+    font-size: 30px;
 
-      font-family: Serif;
+    font-family: Serif;
 
-      text-align: center;
+    text-align: center;
 
-      color: #000000;
+    color: #000000;
 
   }
 
 
   h2 {
 
-      font-size: 30px;
+    font-size: 30px;
 
-      font-family: Serif;
+    font-family: Serif;
 
-      text-align: center;
+    text-align: center;
 
-      color: #ffffff;
+    color: #000000;
 
   }
 
   p {
 
-      font-size: 30px;
+    font-size: 30px;
 
-      font-family: Serif;
+    font-family: Serif;
 
-      text-align: center;
+    text-align: center;
 
-      color: #ffffff;
+    color: #ffffff;
 
   }
 
   #rc3 {
 
-      background: #007bff;
+    background: #007bff;
 
-      border-radius: 25px;
+    border-radius: 25px;
 
-      padding: 20px;
+    padding: 10px;
 
-      position: relative;
+    position: relative;
 
-      left: 5%;
+    left: 5%;
 
-      width: 90%;
+    width: 90%;
 
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+  }
+
+  #boton {
+
+    cursor: pointer;
+
+    position: relative;
+
+    top: 65px;
+
+    left: 42.5%;
+
+    width: 15%;
+
+    background: #007bff;
+
+    border-radius: 25px;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 </style>
 
@@ -73,7 +93,12 @@
 <br>
 <div id="rc3">
   <p>
-      Pagina web para la gestion y administracion de procesos del hotel neruda.
+    Pagina web para la gestion, administracion de procesos y reservas del hotel neruda.
   </p>
 </div>
-<br><br><br><br><br><br>
+<br>
+<div>
+  <h2>Eres Administrador o Cliente? inicia sesión ahora mismo</h2>
+  <a id="boton" class="nav-link" [routerLink]='["/login"]' >Iniciar Sesión</a>
+</div>
+<br><br><br><br>

@@ -22,8 +22,11 @@ import { FacturaGestionComponent } from './hotel/factura/factura-gestion/factura
 import { EmpleadoConsultaComponent } from './hotel/empleado/empleado-consulta/empleado-consulta.component';
 import { EmpleadoRegistroComponent } from './hotel/empleado/empleado-registro/empleado-registro.component';
 import { EmpleadoGestionComponent } from './hotel/empleado/empleado-gestion/empleado-gestion.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from './login/login.component';
+import { RegistroLoginComponent } from './login/registro-login/registro-login.component';
+import { FiltroClientePipe } from './pipe/filtro-cliente.pipe';
 
 @NgModule({
   declarations: [
@@ -45,13 +48,17 @@ import { CommonModule } from '@angular/common';
     FacturaGestionComponent,
     EmpleadoConsultaComponent,
     EmpleadoRegistroComponent,
-    EmpleadoGestionComponent
+    EmpleadoGestionComponent,
+    LoginComponent,
+    RegistroLoginComponent,
+    FiltroClientePipe,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },

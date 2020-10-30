@@ -1,0 +1,30 @@
+<title>LOGIN</title>
+<br>
+<div id="form">
+  <form action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <img src="assets/userl.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>USUARIO</b></label>
+      <input type="text" placeholder="INGRESAR USUARIO" name="usuario" required>
+      <label for="tuser"><b>TIPO DE USUARIO</b></label>
+      <select id="tuser" name="tuser" required>
+        <option value="seleccionar">Seleccionar</option>
+        <option value="masculino">Administrador</option>
+        <option value="femenino">Cliente</option>
+      </select>
+      <label for="psw"><b>CONTRASEÑA</b></label>
+      <input type="password" placeholder="INGRESAR CONTRASEÑA" name="contraseña" required>
+      <br><br>
+      <button id="divcontainer2" type="button" onclick="location.href='https://localhost:5001/administracion'"
+        class="btn btn-primary">Iniciar Sesion</button>
+      <br>
+    </div>
+  </form>
+  <br>
+  <button id="divcontainer1" type="button" [routerLink]='["/registro"]' class="btn btn-primary">Registrarme</button>
+  <br><br>
+</div>
+<br>

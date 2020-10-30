@@ -1,40 +1,76 @@
 <title>REGISTRO CLIENTE</title>
-<br><div align="center"><img src="assets/registrar.png" alt="Logo">
+<br>
+<div align="center"><img src="assets/registrar.png" alt="Logo">
     <h1>REGISTRO CLIENTE</h1>
 </div><br>
 <div id="divcontainer" class="forms">
-    <form id="formularioRegistro">
-        <label>Cedula</label>
-        <input type="text" id="cedula" name="cedula" [(ngModel)]="cliente.cedula"  placeholder="Cedula">
-        <label >Primer Nombre</label>
-        <input type="text" id="primerNombre" name="primerNombre" [(ngModel)]="cliente.primerNombre" placeholder="Primer Nombre">
-        <label >Segundo Nombre</label>
-        <input type="text" id="segundoNombre" name="segundoNombre" [(ngModel)]="cliente.segundoNombre" placeholder="Segundo Nombre">
-        <label >Primer Apellido</label>
-        <input type="text" id="primerApellido" name="primerApellido" [(ngModel)]="cliente.primerApellido" placeholder="Primer Apellido">
-        <label >Segundo Apellido</label>
-        <input type="text" id="segundoApellido" name="segundoApellido" [(ngModel)]="cliente.segundoApellido" placeholder="Segundo Apellido">
-        <label >Sexo</label>
-        <select id="sexo" name="sexo" [(ngModel)]="cliente.sexo">
-            <option value="seleccionar">Seleccionar</option>
-            <option value="masculino">Masculino</option>
-            <option value="femenino">Femenino</option>
-        </select> <br>
-        <label >Edad</label><br>
-        <input type="number" id="edad" name="edad" [(ngModel)]="cliente.edad" placeholder="Edad"><br>
-        <label >Email</label>
-        <input type="text" id="email" name="email" [(ngModel)]="cliente.email" placeholder="Email">
-        <label >Telefono</label><br>
-        <input type="number" id="telefono" name="telefono"  [(ngModel)]="cliente.telefono" placeholder="Telefono"><br>
-        <label >Departamento</label>
-        <input type="text" id="departamento" name="departamento" [(ngModel)]="cliente.departamento" placeholder="Departamento"><br>
-        <label >Ciudad</label>
-        <input type="text" id="ciudad" name="ciudad" [(ngModel)]="cliente.ciudad" placeholder="Ciudad">
+    <form id="FormularioRegistro" [formGroup]="formregistro" >
+
+        <div class="form-group">
+            <label>Cedula</label>
+            <input id= cedula name="cedula" type="text" formControlName="cedula" placeholder="Cedula">
+        </div>
+
+        <div>
+            <label>Primer Nombre</label>
+            <input type="text" id="primerNombre" name="primerNombre" formControlName="primerNombre"
+                placeholder="Primer Nombre">
+        </div>
+
+
+        <div>
+            <label>Segundo Nombre</label>
+            <input type="text" id="segundoNombre" name="segundoNombre" formControlName="segundoNombre"
+                placeholder="Segundo Nombre">
+        </div>
+
+        <div>
+            <label>Primer Apellido</label>
+            <input type="text" id="primerApellido" name="primerApellido" formControlName="primerApellido"
+                placeholder="Primer Apellido">
+        </div>
+
+        <div>
+            <label>Segundo Apellido</label>
+            <input type="text" id="segundoApellido" name="segundoApellido" formControlName="segundoApellido"
+                placeholder="Segundo Apellido">
+        </div>
+
+        <div>
+            <label>Sexo</label>
+            <select id="sexo" name="sexo" formControlName="sexo">
+                <option value="seleccionar">Seleccionar</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Edad</label><br>
+            <input type="number" id="edad" name="edad" formControlName="edad" placeholder="Edad">
+        </div>
+
+        <div>
+            <label>Email</label>
+            <input type="text" id="email" name="email" formControlName="email" placeholder="Email">
+        </div>
+
+        <div>
+            <label>Telefono</label><br>
+            <input type="number" id="telefono" name="telefono" formControlName="telefono" placeholder="Telefono">
+        </div>
+
+        <div>
+            <label>Departamento</label>
+            <input type="text" id="departamento" name="departamento" formControlName="departamento"
+                placeholder="Departamento">
+        </div>
+
+        <div>
+            <label>Ciudad</label>
+            <input type="text" id="ciudad" name="ciudad" formControlName="ciudad" placeholder="Ciudad">
+        </div>
     </form>
 </div>
 <br>
-<button  id="divcontainer2" type="button" (click)="add()" class="btn btn-primary" >Guardar</button>
-
-<!--
-    <button  id="divcontainer2" type="button" class="btn btn-primary" (click)="add()">Guardar</button>
--->
+<button id="divcontainer2" class="btn btn-primary" (click)="onSubmit()" [disabled]="formregistro.invalid">Guardar</button>
