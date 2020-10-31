@@ -4,8 +4,8 @@ using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using Entity;
-using HotelNeruda.Models;
 using Datos;
+using ClienteModel;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -32,10 +32,10 @@ public class ClienteController : ControllerBase
         }
     }
     // GET: api/Persona/5​
-    [HttpGet("{cedula}")]
-    public ActionResult<ClienteViewModel> Get(string cedula)
+    [HttpGet("{idcliente}")]
+    public ActionResult<ClienteViewModel> Get(string idcliente)
     {
-        var cliente = _clienteService.BuscarxIdentificacion(cedula);
+        var cliente = _clienteService.BuscarxIdentificacion(idcliente);
         if (cliente == null) return NotFound();
         var clienteViewModel = new ClienteViewModel(cliente);
         return clienteViewModel;
@@ -58,9 +58,9 @@ public class ClienteController : ControllerBase
     // DELETE: api/Persona/5​
 
     [HttpDelete("{cedula}")]
-    public ActionResult<string> Delete(string cedula)
+    public ActionResult<string> Delete(string idcliente)
     {
-        string mensaje = _clienteService.Eliminar(cedula);
+        string mensaje = _clienteService.Eliminar(idcliente);
         return Ok(mensaje);
     }
 
@@ -68,17 +68,7 @@ public class ClienteController : ControllerBase
     {
         var cliente = new Cliente
         {
-            Cedula = clienteInput.Cedula,
-            PrimerNombre = clienteInput.PrimerNombre,
-            SegundoNombre = clienteInput.SegundoNombre,
-            PrimerApellido = clienteInput.PrimerApellido,
-            SegundoApellido = clienteInput.SegundoApellido,
-            Email = clienteInput.Email,
-            Edad = clienteInput.Edad,
-            Sexo = clienteInput.Sexo,
-            Telefono = clienteInput.Telefono,
-            Departamento = clienteInput.Departamento,
-            Ciudad = clienteInput.Ciudad,
+            IdCliente = clienteInput.IdCliente,
         };
         return cliente;
     }

@@ -1,29 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj": {}
+    "c:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj": {
+    "c:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj",
+        "projectUniqueName": "c:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj",
+        "projectPath": "c:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\Osuka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\obj\\",
+        "outputPath": "c:\\Users\\Osuka\\Desktop\\ProyectoWeb\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Osuka\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netstandard2.1"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
+          "netstandard2.1": {
             "projectReferences": {}
           }
         },
@@ -34,14 +34,8 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
+        "netstandard2.1": {
           "dependencies": {
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            },
             "System.ComponentModel.Annotations": {
               "target": "Package",
               "version": "[4.7.0, )"
@@ -57,6 +51,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }

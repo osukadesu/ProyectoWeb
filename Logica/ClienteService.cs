@@ -18,7 +18,6 @@ namespace Logica
         {
             try
             {
-                cliente.Validaciones();
                 _context.Clientes.Add(cliente);
                 _context.SaveChanges();
                 return new GuardarClienteResponse(cliente);
