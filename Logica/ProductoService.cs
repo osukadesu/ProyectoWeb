@@ -14,46 +14,46 @@ namespace Logica
         {
             _context = context;
         }
-        public GuardarClienteResponse Guardar(Cliente cliente)
+        public GuardarProductoResponse Guardar(Producto producto)
         {
             try
             {
-                _context.Clientes.Add(cliente);
+                _context.Productos.Add(producto);
                 _context.SaveChanges();
-                return new GuardarClienteResponse(cliente);
+                return new GuardarProductoResponse(producto);
             }
             catch (Exception e)
 
             {
-                return new GuardarClienteResponse($"Error de la Aplicacion: {e.Message}");
+                return new GuardarProductoResponse($"Error de la Aplicacion: {e.Message}");
             }
 
         }
-        public ConsultaClienteResponse ConsultarTodos()
+        public ConsultaProductoResponse ConsultarTodos()
         {
             try
             {
-                List<Cliente> clientes = _context.Clientes.ToList();
-                return new ConsultaClienteResponse(clientes);
+                List<Producto> productos = _context.Productos.ToList();
+                return new ConsultaProductoResponse(productos);
             }
             catch (Exception e)
             {
-                return new ConsultaClienteResponse($"Error en la aplicacion:  {e.Message}");
+                return new ConsultaProductoResponse($"Error en la aplicacion:  {e.Message}");
             }
         }
 
-        public Cliente BuscarxIdentificacion(string cedula)
+        public Producto BuscarxIdentificacion(string idproducto)
         {
-            Cliente persona = _context.Clientes.Find(cedula);
-            return persona;
+            Producto producto = _context.Productos.Find(idproducto);
+            return producto;
         }
 
-        public string Eliminar(string cedula)
+        public string Eliminar(string idproducto)
         {
-            Cliente cliente = new Cliente();
-            if ((cliente = _context.Clientes.Find(cedula)) != null)
+            Producto producto = new Producto();
+            if ((producto = _context.Productos.Find(idproducto)) != null)
             {
-                _context.Clientes.Remove(cliente);
+                _context.Productos.Remove(producto);
                 _context.SaveChanges();
                 return $"Se ha eliminado la persona.";
             }
@@ -63,40 +63,40 @@ namespace Logica
             }
         }
 
-        public class ConsultaClienteResponse
+        public class ConsultaProductoResponse
         {
 
-            public ConsultaClienteResponse(List<Cliente> clientes)
+            public ConsultaProductoResponse(List<Producto> productos)
             {
                 Error = false;
-                Clientes = clientes;
+                Productos = productos;
             }
 
-            public ConsultaClienteResponse(string mensaje)
+            public ConsultaProductoResponse(string mensaje)
             {
                 Error = true;
                 Mensaje = mensaje;
             }
             public Boolean Error { get; set; }
             public string Mensaje { get; set; }
-            public List<Cliente> Clientes { get; set; }
+            public List<Producto> Productos { get; set; }
         }
-        public class GuardarClienteResponse
+        public class GuardarProductoResponse
 
         {
 
-            public GuardarClienteResponse(Cliente cliente)
+            public GuardarProductoResponse(Producto producto)
 
             {
                 Error = false;
 
-                Cliente = cliente;
+                Producto = producto;
 
             }
 
 
 
-            public GuardarClienteResponse(string mensaje)
+            public GuardarProductoResponse(string mensaje)
 
             {
                 Error = true;
@@ -107,7 +107,7 @@ namespace Logica
 
             public string Mensaje { get; set; }
 
-            public Cliente Cliente { get; set; }
+            public Producto Producto { get; set; }
 
         }
     }

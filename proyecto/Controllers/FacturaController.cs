@@ -32,10 +32,10 @@ public class FacturaController : ControllerBase
         }
     }
     // GET: api/Persona/5​
-    [HttpGet("{numerofactura}")]
-    public ActionResult<FacturaViewModel> Get(string numerofactura)
+    [HttpGet("{idfactura}")]
+    public ActionResult<FacturaViewModel> Get(string idfactura)
     {
-        var factura = _facturaService.BuscarxIdentificacion(numerofactura);
+        var factura = _facturaService.BuscarxIdentificacion(idfactura);
         if (factura == null) return NotFound();
         var facturaViewModel = new FacturaViewModel(factura);
         return facturaViewModel;
@@ -57,10 +57,10 @@ public class FacturaController : ControllerBase
 
     // DELETE: api/Persona/5​
 
-    [HttpDelete("{numerofactura}")]
-    public ActionResult<string> Delete(string numerofactura)
+    [HttpDelete("{idfactura}")]
+    public ActionResult<string> Delete(string idfactura)
     {
-        string mensaje = _facturaService.Eliminar(numerofactura);
+        string mensaje = _facturaService.Eliminar(idfactura);
         return Ok(mensaje);
     }
 
@@ -73,6 +73,7 @@ public class FacturaController : ControllerBase
             Iva = facturaInput.Iva,
             Subtotal = facturaInput.Subtotal,
             Total = facturaInput.Total,
+            Cantidad = facturaInput.Cantidad,
             FechaEntrada = facturaInput.FechaEntrada,
             FechaSalida = facturaInput.FechaSalida,
         };

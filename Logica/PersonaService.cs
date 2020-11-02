@@ -14,46 +14,46 @@ namespace Logica
         {
             _context = context;
         }
-        public GuardarClienteResponse Guardar(Cliente cliente)
+        public GuardarPersonaResponse Guardar(Persona persona)
         {
             try
             {
-                _context.Clientes.Add(cliente);
+                _context.Personas.Add(persona);
                 _context.SaveChanges();
-                return new GuardarClienteResponse(cliente);
+                return new GuardarPersonaResponse(persona);
             }
             catch (Exception e)
 
             {
-                return new GuardarClienteResponse($"Error de la Aplicacion: {e.Message}");
+                return new GuardarPersonaResponse($"Error de la Aplicacion: {e.Message}");
             }
 
         }
-        public ConsultaClienteResponse ConsultarTodos()
+        public ConsultaPersonaResponse ConsultarTodos()
         {
             try
             {
-                List<Cliente> clientes = _context.Clientes.ToList();
-                return new ConsultaClienteResponse(clientes);
+                List<Persona> personas = _context.Personas.ToList();
+                return new ConsultaPersonaResponse(personas);
             }
             catch (Exception e)
             {
-                return new ConsultaClienteResponse($"Error en la aplicacion:  {e.Message}");
+                return new ConsultaPersonaResponse($"Error en la aplicacion:  {e.Message}");
             }
         }
 
-        public Cliente BuscarxIdentificacion(string cedula)
+        public Persona BuscarxIdentificacion(string cedula)
         {
-            Cliente persona = _context.Clientes.Find(cedula);
+            Persona persona = _context.Personas.Find(cedula);
             return persona;
         }
 
         public string Eliminar(string cedula)
         {
-            Cliente cliente = new Cliente();
-            if ((cliente = _context.Clientes.Find(cedula)) != null)
+            Persona persona = new Persona();
+            if ((persona = _context.Personas.Find(cedula)) != null)
             {
-                _context.Clientes.Remove(cliente);
+                _context.Personas.Remove(persona);
                 _context.SaveChanges();
                 return $"Se ha eliminado la persona.";
             }
@@ -63,40 +63,40 @@ namespace Logica
             }
         }
 
-        public class ConsultaClienteResponse
+        public class ConsultaPersonaResponse
         {
 
-            public ConsultaClienteResponse(List<Cliente> clientes)
+            public ConsultaPersonaResponse(List<Persona> personas)
             {
                 Error = false;
-                Clientes = clientes;
+                Personas = personas;
             }
 
-            public ConsultaClienteResponse(string mensaje)
+            public ConsultaPersonaResponse(string mensaje)
             {
                 Error = true;
                 Mensaje = mensaje;
             }
             public Boolean Error { get; set; }
             public string Mensaje { get; set; }
-            public List<Cliente> Clientes { get; set; }
+            public List<Persona> Personas { get; set; }
         }
-        public class GuardarClienteResponse
+        public class GuardarPersonaResponse
 
         {
 
-            public GuardarClienteResponse(Cliente cliente)
+            public GuardarPersonaResponse(Persona persona)
 
             {
                 Error = false;
 
-                Cliente = cliente;
+                Persona = persona;
 
             }
 
 
 
-            public GuardarClienteResponse(string mensaje)
+            public GuardarPersonaResponse(string mensaje)
 
             {
                 Error = true;
@@ -107,7 +107,7 @@ namespace Logica
 
             public string Mensaje { get; set; }
 
-            public Cliente Cliente { get; set; }
+            public Persona Persona { get; set; }
 
         }
     }

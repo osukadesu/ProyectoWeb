@@ -14,89 +14,89 @@ namespace Logica
         {
             _context = context;
         }
-        public GuardarClienteResponse Guardar(Cliente cliente)
+        public GuardarHabitacionResponse Guardar(Habitacion habitacion)
         {
             try
             {
-                _context.Clientes.Add(cliente);
+                _context.Habitaciones.Add(habitacion);
                 _context.SaveChanges();
-                return new GuardarClienteResponse(cliente);
+                return new GuardarHabitacionResponse(habitacion);
             }
             catch (Exception e)
 
             {
-                return new GuardarClienteResponse($"Error de la Aplicacion: {e.Message}");
+                return new GuardarHabitacionResponse($"Error de la Aplicacion: {e.Message}");
             }
 
         }
-        public ConsultaClienteResponse ConsultarTodos()
+        public ConsultaHabitacionResponse ConsultarTodos()
         {
             try
             {
-                List<Cliente> clientes = _context.Clientes.ToList();
-                return new ConsultaClienteResponse(clientes);
+                List<Habitacion> habitaciones = _context.Habitaciones.ToList();
+                return new ConsultaHabitacionResponse(habitaciones);
             }
             catch (Exception e)
             {
-                return new ConsultaClienteResponse($"Error en la aplicacion:  {e.Message}");
+                return new ConsultaHabitacionResponse($"Error en la aplicacion:  {e.Message}");
             }
         }
 
-        public Cliente BuscarxIdentificacion(string cedula)
+        public Habitacion BuscarxIdentificacion(string idhabitacion)
         {
-            Cliente persona = _context.Clientes.Find(cedula);
-            return persona;
+            Habitacion habitacion = _context.Habitaciones.Find(idhabitacion);
+            return habitacion;
         }
 
-        public string Eliminar(string cedula)
+        public string Eliminar(string idhabitacion)
         {
-            Cliente cliente = new Cliente();
-            if ((cliente = _context.Clientes.Find(cedula)) != null)
+            Habitacion habitacion = new Habitacion();
+            if ((habitacion = _context.Habitaciones.Find(idhabitacion)) != null)
             {
-                _context.Clientes.Remove(cliente);
+                _context.Habitaciones.Remove(habitacion);
                 _context.SaveChanges();
-                return $"Se ha eliminado la persona.";
+                return $"Se ha eliminado la habitacion.";
             }
             else
             {
-                return $"No se encontro la persona. ";
+                return $"No se encontro la habitacion. ";
             }
         }
 
-        public class ConsultaClienteResponse
+        public class ConsultaHabitacionResponse
         {
 
-            public ConsultaClienteResponse(List<Cliente> clientes)
+            public ConsultaHabitacionResponse(List<Habitacion> habitaciones)
             {
                 Error = false;
-                Clientes = clientes;
+                Habitaciones = habitaciones;
             }
 
-            public ConsultaClienteResponse(string mensaje)
+            public ConsultaHabitacionResponse(string mensaje)
             {
                 Error = true;
                 Mensaje = mensaje;
             }
             public Boolean Error { get; set; }
             public string Mensaje { get; set; }
-            public List<Cliente> Clientes { get; set; }
+            public List<Habitacion> Habitaciones { get; set; }
         }
-        public class GuardarClienteResponse
+        public class GuardarHabitacionResponse
 
         {
 
-            public GuardarClienteResponse(Cliente cliente)
+            public GuardarHabitacionResponse(Habitacion habitacion)
 
             {
                 Error = false;
 
-                Cliente = cliente;
+                Habitacion = habitacion;
 
             }
 
 
 
-            public GuardarClienteResponse(string mensaje)
+            public GuardarHabitacionResponse(string mensaje)
 
             {
                 Error = true;
@@ -107,7 +107,7 @@ namespace Logica
 
             public string Mensaje { get; set; }
 
-            public Cliente Cliente { get; set; }
+            public Habitacion Habitacion { get; set; }
 
         }
     }

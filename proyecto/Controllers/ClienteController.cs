@@ -57,7 +57,7 @@ public class ClienteController : ControllerBase
 
     // DELETE: api/Persona/5​
 
-    [HttpDelete("{cedula}")]
+    [HttpDelete("{idcliente}")]
     public ActionResult<string> Delete(string idcliente)
     {
         string mensaje = _clienteService.Eliminar(idcliente);

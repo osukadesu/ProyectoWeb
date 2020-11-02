@@ -32,10 +32,10 @@ public class HabitacionController : ControllerBase
         }
     }
     // GET: api/Persona/5​
-    [HttpGet("{numerofactura}")]
-    public ActionResult<HabitacionViewModel> Get(string numerohabitacion)
+    [HttpGet("{idhabitacion}")]
+    public ActionResult<HabitacionViewModel> Get(string idhabitacion)
     {
-        var habitacion = _habitacionService.BuscarxIdentificacion(numerohabitacion);
+        var habitacion = _habitacionService.BuscarxIdentificacion(idhabitacion);
         if (habitacion == null) return NotFound();
         var habitacionViewModel = new HabitacionViewModel(habitacion);
         return habitacionViewModel;
@@ -44,38 +44,36 @@ public class HabitacionController : ControllerBase
     // POST: api/Persona​
 
     [HttpPost]
-    public ActionResult<FacturaViewModel> Post(FacturaInputModel facturaInput)
+    public ActionResult<HabitacionViewModel> Post(HabitacionInputModel habitacionInput)
     {
-        Factura factura = MapearFactura(facturaInput);
-        var response = _habitacionService.Guardar(factura);
+        Habitacion habitacion = MapearHabitacion(habitacionInput);
+        var response = _habitacionService.Guardar(habitacion);
         if (response.Error)
         {
             return BadRequest(response.Mensaje);
         }
-        return Ok(response.Factura);
+        return Ok(response.Habitacion);
     }
 
     // DELETE: api/Persona/5​
 
-    [HttpDelete("{numerofactura}")]
-    public ActionResult<string> Delete(string numerofactura)
+    [HttpDelete("{idhabitacion}")]
+    public ActionResult<string> Delete(string idhabitacion)
     {
-        string mensaje = _habitacionService.Eliminar(numerofactura);
+        string mensaje = _habitacionService.Eliminar(idhabitacion);
         return Ok(mensaje);
     }
 
-    private Factura MapearFactura(FacturaInputModel facturaInput)
+    private Habitacion MapearHabitacion(HabitacionInputModel habitacionInput)
     {
-        var factura = new Factura
+        var habitacion = new Habitacion
         {
-            IdFactura = facturaInput.IdFactura,
-            FechaFactura = facturaInput.FechaFactura,
-            Iva = facturaInput.Iva,
-            Subtotal = facturaInput.Subtotal,
-            Total = facturaInput.Total,
-            FechaEntrada = facturaInput.FechaEntrada,
-            FechaSalida = facturaInput.FechaSalida,
+            IdHabitacion = habitacionInput.IdHabitacion,
+            Tipo = habitacionInput.Tipo,
+            NMinPersonas = habitacionInput.NMinPersonas,
+            Estado = habitacionInput.Estado,
+            Precio = habitacionInput.Precio,
         };
-        return factura;
+        return habitacion;
     }
 }
