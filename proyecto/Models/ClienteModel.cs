@@ -1,17 +1,28 @@
 using Entity;
+using PersonaModel;
 
 namespace ClienteModel
 {
-    public class ClienteInputModel
+    public class ClienteInputModel:PersonaInputModel
     {
-        public string IdCliente { get; set; }
+         public string IdHabitacion { get; set; }
     }
 
     public class ClienteViewModel : ClienteInputModel
     {
         public ClienteViewModel(Cliente cliente)
         {
-            IdCliente = cliente.IdCliente;
+            Cedula = cliente.Cedula;
+            PrimerNombre = cliente.PrimerNombre;
+            SegundoNombre = cliente.SegundoNombre;
+            PrimerApellido = cliente.PrimerApellido;
+            SegundoApellido = cliente.SegundoApellido;
+            Edad = cliente.Edad;
+            Sexo = cliente.Sexo;
+            Email = cliente.Email;
+            Telefono= cliente.Telefono;
+            Departamento = cliente.Departamento;
+            Ciudad = cliente.Ciudad;
         }
     }
 }

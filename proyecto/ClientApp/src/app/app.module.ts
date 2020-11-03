@@ -27,6 +27,8 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegistroLoginComponent } from './login/registro-login/registro-login.component';
 import { FiltroClientePipe } from './pipe/filtro-cliente.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 
 @NgModule({
   declarations: [
@@ -52,19 +54,22 @@ import { FiltroClientePipe } from './pipe/filtro-cliente.pipe';
     LoginComponent,
     RegistroLoginComponent,
     FiltroClientePipe,
+    AlertModalComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     CommonModule,
     FormsModule,
+    NgbModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
     ]),
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

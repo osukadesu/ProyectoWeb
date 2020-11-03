@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgbAlertModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { Cliente } from '../../models/cliente';
+import { Persona } from '../../models/persona';
 
 @Component({
   selector: 'app-cliente-registro',
@@ -11,7 +14,8 @@ import { Cliente } from '../../models/cliente';
 export class ClienteRegistroComponent implements OnInit {
   formregistro: FormGroup;
   cliente: Cliente;
-  constructor(private clienteService: ClienteService, private formBuilder: FormBuilder) { }
+  constructor(private clienteService: ClienteService, private formBuilder: FormBuilder,
+  private modalService:NgbModal) { }
 
   ngOnInit() {
     this.cliente= new Cliente();
@@ -33,7 +37,7 @@ export class ClienteRegistroComponent implements OnInit {
     this.cliente.telefono = 0;
 
       this.formregistro = this.formBuilder.group({
-      cedula: [this.cliente.cedula, Validators.required],
+      cedula: [this.cliente.cedula, Validators.required, Validators.maxLength(12)],
       primerNombre: [this.cliente.primerNombre, Validators.required],
       segundoNombre: [this.cliente.segundoNombre, Validators.required],
       primerApellido: [this.cliente.primerApellido, Validators.required],
@@ -46,6 +50,15 @@ export class ClienteRegistroComponent implements OnInit {
       telefono: [this.cliente.telefono, Validators.required],
     });
   }
+/*private ValidaCedula(control: AbstractControl) {
+    const cantidad = control.value;
+    if (cantidad <= 0) {
+      return { validCantidad: true, messageCantidad: 'Cantidad menor o igual a 0' };
+    }
+    return null;
+  }*/
+  
+
 
   private ValidaSexo(control: AbstractControl) {
     const sexo = control.value;
@@ -70,7 +83,9 @@ export class ClienteRegistroComponent implements OnInit {
     this.cliente = this.formregistro.value;
     this.clienteService.post(this.cliente).subscribe(p => {
       if (p != null) {
-        alert('Cliente guardado!');
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "Resultado Operación";
+        messageBox.componentInstance.cuerpo = 'Error: No ha agregado una persona a la solicitud';
         this.cliente = p;
       }
     });

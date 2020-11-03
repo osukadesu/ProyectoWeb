@@ -8,7 +8,13 @@
 
         <div class="form-group">
             <label>Cedula</label>
-            <input id= cedula name="cedula" type="text" formControlName="cedula" placeholder="Cedula">
+            <input id= cedula name="cedula"
+            [ngClass]="{'is-invalid': control.cedula.errors && control.cedula.touched}"
+            type="text" formControlName="cedula" placeholder="Cedula">
+            <div *ngIf="control.cedula.errors" class="invalid-feedback">
+                <div *ngIf="control.cedula.errors.required">Se requiere la cedula</div>
+                <div *ngIf="control.cedula.errors.maxlength">Caracteres mayores a 12</div>
+            </div>
         </div>
 
         <div>

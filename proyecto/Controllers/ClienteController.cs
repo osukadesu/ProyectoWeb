@@ -6,6 +6,7 @@ using System.Linq;
 using Entity;
 using Datos;
 using ClienteModel;
+using Microsoft.AspNetCore.Http;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -24,7 +25,10 @@ public class ClienteController : ControllerBase
         var response = _clienteService.ConsultarTodos();
         if (response.Error)
         {
-            return BadRequest(response.Mensaje);
+           ModelState.AddModelError("Error al consultar cliente", response.Mensaje);
+            var detallesproblemas = new ValidationProblemDetails(ModelState);
+             detallesproblemas.Status = StatusCodes.Status500InternalServerError;
+             return BadRequest(detallesproblemas);
         }
         else
         {
@@ -50,7 +54,10 @@ public class ClienteController : ControllerBase
         var response = _clienteService.Guardar(cliente);
         if (response.Error)
         {
-            return BadRequest(response.Mensaje);
+            ModelState.AddModelError("Error al guardar cliente", response.Mensaje);
+            var detallesproblemas = new ValidationProblemDetails(ModelState);
+            detallesproblemas.Status = StatusCodes.Status500InternalServerError;
+            return BadRequest(detallesproblemas);
         }
         return Ok(response.Cliente);
     }
@@ -68,7 +75,18 @@ public class ClienteController : ControllerBase
     {
         var cliente = new Cliente
         {
-            IdCliente = clienteInput.IdCliente,
+            Cedula = clienteInput.Cedula,
+            IdCliente=clienteInput.Cedula,
+            PrimerNombre = clienteInput.PrimerNombre,
+            SegundoNombre = clienteInput.SegundoNombre,
+            PrimerApellido = clienteInput.PrimerApellido,
+            SegundoApellido = clienteInput.SegundoApellido,
+            Edad = clienteInput.Edad,
+            Sexo = clienteInput.Sexo,
+            Email = clienteInput.Email,
+            Telefono= clienteInput.Telefono,
+            Departamento = clienteInput.Departamento,
+            Ciudad = clienteInput.Ciudad
         };
         return cliente;
     }

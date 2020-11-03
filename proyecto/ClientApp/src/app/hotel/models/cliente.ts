@@ -1,13 +1,9 @@
-export class Cliente {
-    cedula: string;
-    primerNombre: string;
-    segundoNombre: string;
-    primerApellido: string;
-    segundoApellido: string;
-    sexo: string;
-    edad: number;
-    email: string;
-    telefono: number;
-    departamento: string;
-    ciudad: string;
+import { Factura } from "./factura";
+import { Habitacion } from "./habitacion";
+import { Persona } from "./persona";
+
+export class Cliente extends Persona{
+    idcliente: string;
+    factura: Factura;
+    habitacion:Habitacion;
 }
