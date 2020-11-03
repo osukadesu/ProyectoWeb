@@ -1,4 +1,3 @@
-<!--
 
 <title>CONSULTAR EMPLEADOS</title>
 <br>
@@ -7,11 +6,8 @@
 </div><br>
 
 <form class="form-inline" class="container" id="Buscador">
-    <input class="form-control mr-sm-2" type="search" placeholder="Buscar por Cedula" aria-label="Search">
-    <button class="btn btn-primary" type="submit">Buscar </button>
+    <input class="form-control mr-sm-2" name="filtroCliente" [(ngModel)]="searchText" type="text" placeholder="Buscar por Cedula" aria-label="Search">
 </form><br><br>
-
-<button id="divcontainer2" type="button" class="btn btn-primary">Consultar</button>
 
 <div class="table-responsive" id="rcorners1">
     <table class="table table-bordered" id="myTable" *ngIf='empleados && empleados.length'>
@@ -46,10 +42,9 @@
                 <td>{{ empleado.ciudad}}</td>
                 <td>{{ empleado.cargo}}</td>
                 <td>{{ empleado.jornada}}</td>
+                <td> <a routerLink='/personaEdicion/{{cliente.cedula}}'>Modificar</a> <button id="divcontainer2" class="btn btn-primary">Eliminar</button></td>
             </tr>
         </tbody>
     </table>
 </div>
 <br><br>
-
--->

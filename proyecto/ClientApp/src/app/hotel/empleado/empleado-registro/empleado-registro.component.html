@@ -1,4 +1,3 @@
-<!--
 
 <title>REGISTRO DE EMPLEADO</title>
 <br>
@@ -6,53 +5,96 @@
     <h1>REGISTRAR EMPLEADO</h1>
 </div><br>
 <div id="divcontainer" class="forms">
-    <form id="formularioRegistro">
-        <label>Cedula</label>
-        <input type="text" id="cedula" name="cedula" placeholder="Cedula">
-        <label>Primer Nombre</label>
-        <input type="text" id="primerNombre" name="primerNombre" placeholder="Primer Nombre">
-        <label>Segundo Nombre</label>
-        <input type="text" id="segundoNombre" name="segundoNombre" placeholder="Segundo Nombre">
-        <label>Primer Apellido</label>
-        <input type="text" id="primerApellido" name="primerApellido" placeholder="Primer Apellido">
-        <label>Segundo Apellido</label>
-        <input type="text" id="segundoApellido" name="segundoApellido" placeholder="Segundo Apellido">
-        <label>Sexo</label>
-        <select id="sexo" name="sexo">
-            <option value="seleccionar">Seleccionar</option>
-            <option value="masculino">Masculino</option>
-            <option value="femenino">Femenino</option>
-        </select> <br>
-        <label>Edad</label><br>
-        <input type="number" id="edad" name="edad"><br>
-        <label>Telefono</label><br>
-        <input type="number" id="telefono" name="telefono"><br>
-        <label>E-mail</label>
-        <input type="text" id="email" name="email">
-        <label >Departamento</label>
-        <input type="text" id="departamento" name="departamento"  placeholder="Departamento"><br>
-        <label >Ciudad</label>
-        <input type="text" id="ciudad" name="ciudad"  placeholder="Ciudad">
-        <label>Tipo de Cargo</label>
-        <select id="cargo" name="cargo">
-            <option value="seleccionar">Seleccionar</option>
-            <option value="A">Recepcionista</option>
-            <option value="B">Camarera de piso</option>
-            <option value="C">Gobernanta</option>
-            <option value="D">Personal de seguridad y mantenimiento</option>
-            <option value="E">Director general</option>
-        </select> <br>
-        <label>Jornada</label>
-        <select id="jornadaEmpleado" name="jornadaEmpleado">
-            <option value="seleccionar">Seleccionar</option>
-            <option value="diurna">Diurna</option>
-            <option value="nocturna">Nocturna</option>
-        </select> <br>
+    <form id="FormularioRegistro" [formGroup]="formregistro" >
+
+        <div class="form-group">
+            <label>Cedula</label>
+            <input id= cedula name="cedula"
+            [ngClass]="{'is-invalid': control.cedula.errors && control.cedula.touched}"
+            type="text" formControlName="cedula" placeholder="Cedula">
+            <div *ngIf="control.cedula.errors" class="invalid-feedback">
+                <div *ngIf="control.cedula.errors.required">Se requiere la cedula</div>
+                <div *ngIf="control.cedula.errors.maxlength">Caracteres mayores a 12</div>
+            </div>
+        </div>
+
+        <div>
+            <label>Primer Nombre</label>
+            <input type="text" id="primerNombre" name="primerNombre" formControlName="primerNombre"
+                placeholder="Primer Nombre">
+        </div>
+
+        <div>
+            <label>Segundo Nombre</label>
+            <input type="text" id="segundoNombre" name="segundoNombre" formControlName="segundoNombre"
+                placeholder="Segundo Nombre">
+        </div>
+
+        <div>
+            <label>Primer Apellido</label>
+            <input type="text" id="primerApellido" name="primerApellido" formControlName="primerApellido"
+                placeholder="Primer Apellido">
+        </div>
+
+        <div>
+            <label>Segundo Apellido</label>
+            <input type="text" id="segundoApellido" name="segundoApellido" formControlName="segundoApellido"
+                placeholder="Segundo Apellido">
+        </div>
+
+        <div>
+            <label>Sexo</label>
+            <select id="sexo" name="sexo" formControlName="sexo">
+                <option value="seleccionar">Seleccionar</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Edad</label><br>
+            <input type="number" id="edad" name="edad" formControlName="edad" placeholder="Edad">
+        </div>
+
+        <div>
+            <label>Email</label>
+            <input type="text" id="email" name="email" formControlName="email" placeholder="Email">
+        </div>
+
+        <div>
+            <label>Telefono</label><br>
+            <input type="number" id="telefono" name="telefono" formControlName="telefono" placeholder="Telefono">
+        </div>
+
+        <div>
+            <label>Cargo</label>
+            <input type="text" id="cargo" name="cargo" formControlName="cargo"
+            placeholder="Cargo">
+        </div>
+
+        <div>
+            <label>Jornada</label>
+            <input type="text" id="jornada" name="jornada" formControlName="jornada"
+                placeholder="Jornada">
+        </div>
+
+        <div>
+            <label>Jefe</label>
+            <input type="text" id="jefe" name="jefe" placeholder="Jefe">
+        </div>
+
+        <div>
+            <label>Departamento</label>
+            <input type="text" id="departamento" name="departamento" formControlName="departamento"
+                placeholder="Departamento">
+        </div>
+
+        <div>
+            <label>Ciudad</label>
+            <input type="text" id="ciudad" name="ciudad" formControlName="ciudad" placeholder="Ciudad">
+        </div>
     </form>
 </div>
 <br>
-<button id="divcontainer2" type="button" class="btn btn-primary">Guardar</button>
 
-<button  id="divcontainer2" type="button" class="btn btn-primary" (click)="add()">Guardar</button> 
-
--->
+<button id="divcontainer2" class="btn btn-primary" (click)="onSubmit()" [disabled]="formregistro.invalid">Guardar</button>
