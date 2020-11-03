@@ -68,7 +68,18 @@ public class EmpleadoController : ControllerBase
     {
         var empleado = new Empleado
         {
-            IdEmpleado = empleadoInput.IdEmpleado,
+            Cedula = empleadoInput.Cedula,
+            IdEmpleado = empleadoInput.Cedula,
+            PrimerNombre = empleadoInput.PrimerNombre,
+            SegundoNombre = empleadoInput.SegundoNombre,
+            PrimerApellido = empleadoInput.PrimerApellido,
+            SegundoApellido = empleadoInput.SegundoApellido,
+            Edad = empleadoInput.Edad,
+            Sexo = empleadoInput.Sexo,
+            Email = empleadoInput.Email,
+            Telefono = empleadoInput.Telefono,
+            Departamento = empleadoInput.Departamento,
+            Ciudad = empleadoInput.Ciudad,
             Cargo = empleadoInput.Cargo,
             Jornada = empleadoInput.Jornada
         };

@@ -34,6 +34,9 @@ export class EmpleadoRegistroComponent implements OnInit {
     this.empleado.ciudad = '';
     this.empleado.email = '';
     this.empleado.telefono = 0;
+    this.empleado.Cargo = '';
+    this.empleado.Jornada = '';
+    this.empleado.Jefe = '';
 
       this.formregistro = this.formBuilder.group({
       cedula: [this.empleado.cedula, Validators.required, Validators.maxLength(12)],

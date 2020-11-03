@@ -49,6 +49,7 @@ export class ClienteRegistroComponent implements OnInit {
       telefono: [this.cliente.telefono, Validators.required],
     });
   }
+  
 /*private ValidaCedula(control: AbstractControl) {
     const cantidad = control.value;
     if (cantidad <= 0) {
