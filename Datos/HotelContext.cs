@@ -27,7 +27,7 @@ namespace Datos
 
             modelBuilder.Entity<Factura>()
             .HasOne<Cliente>().WithMany()
-            .HasForeignKey(p => p.cedula);
+            .HasForeignKey(p => p.Cedula);
         }
     }
 }

@@ -14,6 +14,7 @@ namespace FacturaModel
         public int Cantidad { get; set; }
         public DateTime FechaEntrada { get; set; }
         public DateTime FechaSalida { get; set; }
+        public string Cedula{ get; set; }
     }
 
     public class FacturaViewModel : FacturaInputModel
@@ -22,6 +23,7 @@ namespace FacturaModel
         {
             IdFactura = factura.IdFactura;
             FechaFactura = factura.FechaFactura;
+            Cedula = factura.Cedula;
             Subtotal= factura.Subtotal;
             Iva = factura.Iva;
             Total = factura.Total;

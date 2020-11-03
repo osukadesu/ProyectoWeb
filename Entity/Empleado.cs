@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entity
 {
-    public class Empleado:Persona
+    public class Empleado : Persona
     {
         [Column(TypeName = "varchar(4)")]
         public string IdEmpleado { get; set; }

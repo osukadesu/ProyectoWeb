@@ -1,23 +1,26 @@
-using Microsoft.AspNetCore.Mvc;
-using Logica;
-using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Linq;
-using Entity;
-using Datos;
 using ClienteModel;
+using Datos;
+using Entity;
+using Logica;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 [Route("api/[controller]")]
 [ApiController]
 public class ClienteController : ControllerBase
 {
     private readonly ClienteService _clienteService;
+
     public IConfiguration Configuration { get; }
+
     public ClienteController(HotelContext context)
     {
         _clienteService = new ClienteService(context);
     }
+
     // GET: api/Persona​
     [HttpGet]
     public ActionResult<ClienteViewModel> Gets()
@@ -25,16 +28,18 @@ public class ClienteController : ControllerBase
         var response = _clienteService.ConsultarTodos();
         if (response.Error)
         {
-           ModelState.AddModelError("Error al consultar cliente", response.Mensaje);
+            ModelState
+            .AddModelError("Error al consultar cliente", response.Mensaje);
             var detallesproblemas = new ValidationProblemDetails(ModelState);
-             detallesproblemas.Status = StatusCodes.Status500InternalServerError;
-             return BadRequest(detallesproblemas);
+            detallesproblemas.Status = StatusCodes.Status500InternalServerError;
+            return BadRequest(detallesproblemas);
         }
         else
         {
             return Ok(response.Clientes.Select(p => new ClienteViewModel(p)));
         }
     }
+
     // GET: api/Persona/5​
     [HttpGet("{idcliente}")]
     public ActionResult<ClienteViewModel> Get(string idcliente)
@@ -46,7 +51,6 @@ public class ClienteController : ControllerBase
     }
 
     // POST: api/Persona​
-
     [HttpPost]
     public ActionResult<ClienteViewModel> Post(ClienteInputModel clienteInput)
     {
@@ -63,7 +67,6 @@ public class ClienteController : ControllerBase
     }
 
     // DELETE: api/Persona/5​
-
     [HttpDelete("{idcliente}")]
     public ActionResult<string> Delete(string idcliente)
     {
@@ -73,21 +76,21 @@ public class ClienteController : ControllerBase
 
     private Cliente MapearCliente(ClienteInputModel clienteInput)
     {
-        var cliente = new Cliente
-        {
-            Cedula = clienteInput.Cedula,
-            IdCliente=clienteInput.Cedula,
-            PrimerNombre = clienteInput.PrimerNombre,
-            SegundoNombre = clienteInput.SegundoNombre,
-            PrimerApellido = clienteInput.PrimerApellido,
-            SegundoApellido = clienteInput.SegundoApellido,
-            Edad = clienteInput.Edad,
-            Sexo = clienteInput.Sexo,
-            Email = clienteInput.Email,
-            Telefono= clienteInput.Telefono,
-            Departamento = clienteInput.Departamento,
-            Ciudad = clienteInput.Ciudad
-        };
+        var cliente =
+            new Cliente {
+                Cedula = clienteInput.Cedula,
+                IdCliente = clienteInput.Cedula,
+                PrimerNombre = clienteInput.PrimerNombre,
+                SegundoNombre = clienteInput.SegundoNombre,
+                PrimerApellido = clienteInput.PrimerApellido,
+                SegundoApellido = clienteInput.SegundoApellido,
+                Edad = clienteInput.Edad,
+                Sexo = clienteInput.Sexo,
+                Email = clienteInput.Email,
+                Telefono = clienteInput.Telefono,
+                Departamento = clienteInput.Departamento,
+                Ciudad = clienteInput.Ciudad
+            };
         return cliente;
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using Entity;
 using Datos;
 using FacturaModel;
+using Microsoft.AspNetCore.Http;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -24,7 +25,10 @@ public class FacturaController : ControllerBase
         var response = _facturaService.ConsultarTodos();
         if (response.Error)
         {
-            return BadRequest(response.Mensaje);
+            ModelState.AddModelError("Error al consultar la Factura", response.Mensaje);
+            var detallesproblemas = new ValidationProblemDetails(ModelState);
+            detallesproblemas.Status = StatusCodes.Status500InternalServerError;
+            return BadRequest(detallesproblemas);
         }
         else
         {
@@ -50,7 +54,10 @@ public class FacturaController : ControllerBase
         var response = _facturaService.Guardar(factura);
         if (response.Error)
         {
-            return BadRequest(response.Mensaje);
+            ModelState.AddModelError("Error al guardar la Factura", response.Mensaje);
+            var detallesproblemas = new ValidationProblemDetails(ModelState);
+            detallesproblemas.Status = StatusCodes.Status500InternalServerError;
+            return BadRequest(detallesproblemas);
         }
         return Ok(response.Factura);
     }
@@ -70,6 +77,7 @@ public class FacturaController : ControllerBase
         {
             IdFactura = facturaInput.IdFactura,
             FechaFactura = facturaInput.FechaFactura,
+            Cedula = facturaInput.Cedula,
             Iva = facturaInput.Iva,
             Subtotal = facturaInput.Subtotal,
             Total = facturaInput.Total,
