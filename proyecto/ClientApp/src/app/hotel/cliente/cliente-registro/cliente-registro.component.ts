@@ -4,7 +4,6 @@ import { NgbAlertModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { Cliente } from '../../models/cliente';
-import { Persona } from '../../models/persona';
 
 @Component({
   selector: 'app-cliente-registro',

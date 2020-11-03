@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
 import { EmpleadoService } from 'src/app/services/empleado.service';
 import { Empleado } from '../../models/empleado';
 
@@ -35,17 +36,48 @@ export class EmpleadoRegistroComponent implements OnInit {
     this.empleado.telefono = 0;
 
       this.formregistro = this.formBuilder.group({
-      cedula: [this.cliente.cedula, Validators.required, Validators.maxLength(12)],
-      primerNombre: [this.cliente.primerNombre, Validators.required],
-      segundoNombre: [this.cliente.segundoNombre, Validators.required],
-      primerApellido: [this.cliente.primerApellido, Validators.required],
-      segundoApellido: [this.cliente.segundoApellido, Validators.required],
-      sexo: [this.cliente.sexo, [Validators.required, this.ValidaSexo]],
-      edad: [this.cliente.edad, [Validators.required, Validators.min(1)]],
-      departamento: [this.cliente.departamento, Validators.required],
-      ciudad: [this.cliente.ciudad, Validators.required],
-      email: [this.cliente.email, Validators.required],
-      telefono: [this.cliente.telefono, Validators.required],
+      cedula: [this.empleado.cedula, Validators.required, Validators.maxLength(12)],
+      primerNombre: [this.empleado.primerNombre, Validators.required],
+      segundoNombre: [this.empleado.segundoNombre, Validators.required],
+      primerApellido: [this.empleado.primerApellido, Validators.required],
+      segundoApellido: [this.empleado.segundoApellido, Validators.required],
+      sexo: [this.empleado.sexo, [Validators.required, this.ValidaSexo]],
+      edad: [this.empleado.edad, [Validators.required, Validators.min(1)]],
+      departamento: [this.empleado.departamento, Validators.required],
+      ciudad: [this.empleado.ciudad, Validators.required],
+      email: [this.empleado.email, Validators.required],
+      telefono: [this.empleado.telefono, Validators.required],
+    });
+  }
+
+  private ValidaSexo(control: AbstractControl) {
+    const sexo = control.value;
+    if (sexo.toLocaleUpperCase() !== 'MASCULINO' && sexo.toLocaleUpperCase() !== 'FEMENINO') {
+      return { validSexo: true, messageSexo: 'Sexo No Valido' };
+    }
+    return null;
+  }
+
+  get control() {
+    return this.formregistro.controls;
+  }
+
+  onSubmit() {
+    if (this.formregistro.invalid) {
+      return;
+    }
+    this.add();
+  }
+
+  add() {
+    this.empleado = this.formregistro.value;
+    this.empleadoService.post(this.empleado).subscribe(p => {
+      if (p != null) {
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "Resultado Operación";
+        messageBox.componentInstance.cuerpo = 'Error: No ha agregado el empleado a la solicitud';
+        this.empleado = p;
+      }
     });
   }
 
