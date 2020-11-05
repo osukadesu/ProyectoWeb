@@ -48,11 +48,11 @@
             </thead>
             <tbody>
                 <tr *ngFor="let item of habitaciones; let i = index">
-                    <td>{{item?.idhabitacion | uppercase}}</td>
+                    <td>{{item?.idhabitacion }}</td>
                     <td>{{item?.tipo | uppercase}}</td>
                     <td>{{item?.estado | uppercase}}</td>
-                    <td>{{item?.npersonas | uppercase}}</td>
-                    <td>{{item?.precio | uppercase}}</td>
+                    <td>{{item?.npersonas }}</td>
+                    <td>{{item?.precio | currency: 'COP' }}</td>
                   </tr>
             </tbody>
         </table>
