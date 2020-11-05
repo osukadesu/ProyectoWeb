@@ -55,8 +55,6 @@ namespace proyecto
                         });
                 });
 
-            
-
             //contextos base de datos
             string connectionString =
                 Configuration["ConnectionStrings:DefaultConnection"];
@@ -103,7 +101,7 @@ namespace proyecto
                         pattern: "{controller}/{action=Index}/{id?}");
                 });
 
-                app.UseSwagger();
+            app.UseSwagger();
             app
                 .UseSwaggerUI(c =>
                 {
