@@ -6,6 +6,7 @@ using System.Linq;
 using Entity;
 using Datos;
 using EmpleadoModel;
+using Microsoft.AspNetCore.Http;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -24,7 +25,11 @@ public class EmpleadoController : ControllerBase
         var response = _empleadoService.ConsultarTodos();
         if (response.Error)
         {
-            return BadRequest(response.Mensaje);
+            ModelState
+            .AddModelError("Error al consultar empleado", response.Mensaje);
+            var detallesproblemas = new ValidationProblemDetails(ModelState);
+            detallesproblemas.Status = StatusCodes.Status500InternalServerError;
+            return BadRequest(detallesproblemas);
         }
         else
         {
@@ -50,7 +55,11 @@ public class EmpleadoController : ControllerBase
         var response = _empleadoService.Guardar(empleado);
         if (response.Error)
         {
-            return BadRequest(response.Mensaje);
+            ModelState
+            .AddModelError("Error al guardar empleado", response.Mensaje);
+            var detallesproblemas = new ValidationProblemDetails(ModelState);
+            detallesproblemas.Status = StatusCodes.Status500InternalServerError;
+            return BadRequest(detallesproblemas);
         }
         return Ok(response.Empleado);
     }
@@ -80,6 +89,7 @@ public class EmpleadoController : ControllerBase
             Telefono = empleadoInput.Telefono,
             Departamento = empleadoInput.Departamento,
             Ciudad = empleadoInput.Ciudad,
+            Jefe = empleadoInput.Jefe,
             Cargo = empleadoInput.Cargo,
             Jornada = empleadoInput.Jornada
         };

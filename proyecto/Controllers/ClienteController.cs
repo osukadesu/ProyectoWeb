@@ -29,7 +29,7 @@ public class ClienteController : ControllerBase
         if (response.Error)
         {
             ModelState
-            .AddModelError("Error al consultar cliente", response.Mensaje);
+                .AddModelError("Error al consultar cliente", response.Mensaje);
             var detallesproblemas = new ValidationProblemDetails(ModelState);
             detallesproblemas.Status = StatusCodes.Status500InternalServerError;
             return BadRequest(detallesproblemas);
@@ -58,7 +58,8 @@ public class ClienteController : ControllerBase
         var response = _clienteService.Guardar(cliente);
         if (response.Error)
         {
-            ModelState.AddModelError("Error al guardar cliente", response.Mensaje);
+            ModelState
+                .AddModelError("Error al guardar cliente", response.Mensaje);
             var detallesproblemas = new ValidationProblemDetails(ModelState);
             detallesproblemas.Status = StatusCodes.Status500InternalServerError;
             return BadRequest(detallesproblemas);
@@ -89,7 +90,9 @@ public class ClienteController : ControllerBase
                 Email = clienteInput.Email,
                 Telefono = clienteInput.Telefono,
                 Departamento = clienteInput.Departamento,
-                Ciudad = clienteInput.Ciudad
+                Ciudad = clienteInput.Ciudad,
+                Ppal = clienteInput.Ppal,
+                IdHabitacion = clienteInput.IdHabitacion
             };
         return cliente;
     }

@@ -1,29 +1,69 @@
-<!--
+
     <title>REGISTRO DE HABITACIONES</title>
 <br><div align="center"><img src="assets/registrar.png" alt="Logo">
     <h1>REGISTRO DE HABITACIONES</h1>
 </div><br>
 <div id="divcontainer" class="forms">
-    <form id="formularioRegistro">
-        <label>Numero de Habitacion</label>
-        <input type="number" id="idHabitacion" name="idHabitacion"   placeholder="Numero de Habitacion">
-        <label >Tipo de Habitacion</label>
-        <select id="tipoHabitacion" placeholder="Seleccionar" name="tipoHabitacion"   >
+    <form id="formularioRegistro" [formGroup]="formregistro">
+
+        <div class="form-group">
+            <label>Numero de Habitacion</label>
+            <input  id="idhabitacion" name="idhabitacion" [ngClass]="{'is-invalid': control.idhabitacion.errors && control.idhabitacion.touched}"
+                type="text"  formControlName="idhabitacion" placeholder="Numero de Habitacion">
+            <div *ngIf="control.idhabitacion.errors" class="invalid-feedback">
+                <div *ngIf="control.idhabitacion.errors.required">Se requiere el numero de la habitacion</div>
+                <div *ngIf="control.idhabitacion.errors.maxlength">Caracteres mayores a 4</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Tipo de Habitacion</label>
+            <select id="tipo" name="tipo" [ngClass]="{'is-invalid': control.tipo.errors && control.tipo.touched}"
+            formControlName="tipo">
             <option value="seleccionar">Seleccionar</option>
-            <option value="tipo1">Simple</option>
-            <option value="tipo2">Doble</option>
-            <option value="tipo1">Familiar</option>
-            <option value="tipo2">Triple</option>
-        </select> <br>
-        <label >Estado</label>
-        <input type="text" id="estadoHabitacion" name="estadoHabitacion"  >
-        <label>Precio de Habitacion</label>
-        <input type="number" id="precioHabitacion" name="precioHabitacion"     placeholder="Precio de Habitacion">
+            <option value="familiar">Simple</option>
+            <option value="doble">Doble</option>
+            <option value="triple">Triple</option>
+            <option value="familiar">Familiar</option>
+        </select>
+            <div *ngIf="control.tipo.errors" class="invalid-feedback">
+                <div *ngIf="control.tipo.errors.required">Se requiere el tipo de habitacion</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Numero de Personas</label>
+            <input  type="number" id="npersonas" name="npersonas" [ngClass]="{'is-invalid': control.npersonas.errors && control.npersonas.touched}"
+            formControlName="npersonas">
+            <div *ngIf="control.npersonas.errors" class="invalid-feedback">
+                <div *ngIf="control.npersonas.errors.required">Se requiere el numero de personas</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Estado</label>
+            <select id="estado" name="estado" [ngClass]="{'is-invalid': control.estado.errors && control.estado.touched}"
+            formControlName="estado">
+            <option value="seleccionar">Seleccionar</option>
+            <option value="ocupado">Ocupado</option>
+            <option value="desocupado">Desocupado</option>
+            <option value="mantenimiento">En Mantenimiento</option>
+        </select>
+            <div *ngIf="control.estado.errors" class="invalid-feedback">
+                <div *ngIf="control.estado.errors.required">Se requiere el estado de la habitacion</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Precio</label>
+            <input  type="number" id="precio" name="precio" [ngClass]="{'is-invalid': control.precio.errors && control.precio.touched}"
+            formControlName="precio" placeholder="Precio de Habitacion">
+            <div *ngIf="control.precio.errors" class="invalid-feedback">
+                <div *ngIf="control.precio.errors.required">Se requiere el precio de la habitacion</div>
+            </div>
+        </div>
     </form>
 </div>
 <br>
-<button  id="divcontainer2" type="button" class="btn btn-primary">Guardar</button> 
-
-<button  id="divcontainer2" type="button" class="btn btn-primary" (click)="add()">Guardar</button> 
-
--->
+<button id="divcontainer2" class="btn btn-primary" (click)="onSubmit()"
+    [disabled]="formregistro.invalid">Guardar</button>

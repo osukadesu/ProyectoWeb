@@ -28,29 +28,42 @@ export class EmpleadoRegistroComponent implements OnInit {
     this.empleado.segundoNombre = '';
     this.empleado.primerApellido = '';
     this.empleado.segundoApellido = '';
-    this.empleado.edad = 0;
-    this.empleado.sexo = '';
+    this.empleado.sexo = 'seleccionar';
     this.empleado.departamento = '';
     this.empleado.ciudad = '';
-    this.empleado.email = '';
-    this.empleado.telefono = 0;
-    this.empleado.Cargo = '';
-    this.empleado.Jornada = '';
-    this.empleado.Jefe = '';
+    this.empleado.cargo = 'seleccionar';
+    this.empleado.jornada = 'seleccionar';
 
       this.formregistro = this.formBuilder.group({
-      cedula: [this.empleado.cedula, Validators.required, Validators.maxLength(12)],
+      cedula: [this.empleado.cedula, [Validators.required, Validators.maxLength(12), this.ValidaCedula]],
       primerNombre: [this.empleado.primerNombre, Validators.required],
       segundoNombre: [this.empleado.segundoNombre, Validators.required],
       primerApellido: [this.empleado.primerApellido, Validators.required],
       segundoApellido: [this.empleado.segundoApellido, Validators.required],
       sexo: [this.empleado.sexo, [Validators.required, this.ValidaSexo]],
-      edad: [this.empleado.edad, [Validators.required, Validators.min(1)]],
+      edad: [this.empleado.edad, [Validators.required, Validators.min(18), this.ValidaEdad]],
       departamento: [this.empleado.departamento, Validators.required],
+      cargo: [this.empleado.cargo, Validators.required],
+      jornada: [this.empleado.jornada, Validators.required],
       ciudad: [this.empleado.ciudad, Validators.required],
-      email: [this.empleado.email, Validators.required],
       telefono: [this.empleado.telefono, Validators.required],
     });
+  }
+
+  private ValidaCedula(control: AbstractControl) {
+    const cantidad = control.value;
+    if (cantidad <= 0 || cantidad >= 999999999999) {
+      return { validCantidad: true, messageCantidad: 'Cantidad menor o igual a 0' };
+    }
+    return null;
+  }
+
+  private ValidaEdad(control: AbstractControl) {
+    const edad = control.value;
+    if (edad > 65 || edad < 18) {
+      return { validSexo: true, messageSexo: 'Edad No Valida' };
+    }
+    return null;
   }
 
   private ValidaSexo(control: AbstractControl) {
@@ -78,7 +91,7 @@ export class EmpleadoRegistroComponent implements OnInit {
       if (p != null) {
         const messageBox = this.modalService.open(AlertModalComponent)
         messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.cuerpo = 'Error: No ha agregado el empleado a la solicitud';
+        messageBox.componentInstance.cuerpo = 'Info: se ha agregado un empleado';
         this.empleado = p;
       }
     });

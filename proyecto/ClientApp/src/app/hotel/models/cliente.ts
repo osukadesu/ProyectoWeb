@@ -5,5 +5,7 @@ import { Persona } from "./persona";
 export class Cliente extends Persona{
     idcliente: string;
     factura: Factura;
-    habitacion:Habitacion;
+    habitacion: Habitacion;
+    idhabitacion:string;
+    ppal: string;
 }

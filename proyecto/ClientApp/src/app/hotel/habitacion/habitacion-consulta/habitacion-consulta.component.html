@@ -1,4 +1,4 @@
-<!--
+
 <title>CONSULTAR HABITACIONES</title>
 <br>
 <div align="center"><img src="assets/consultar.png" alt="Logo"><br>
@@ -6,34 +6,56 @@
 </div><br>
 
 <form class="form-inline" class="container" id="Buscador">
-    <input class="form-control mr-sm-2" type="search" placeholder="Buscar por Numero de Habitacion" aria-label="Search">
-    <button class="btn btn-primary" type="submit">Buscar </button>
+    <input class="form-control mr-sm-2" name="filtroCliente" [(ngModel)]="searchText" type="text" placeholder="Buscar # Habitacion" aria-label="Search">
 </form><br><br>
 
-<button id="divcontainer2" type="button" class="btn btn-primary">Consultar</button>
 <div class="table-responsive" id="rcorners1">
-    <table class="table table-bordered" id="myTable" *ngIf='habitaciones && habitaciones.length'>
+    <!--
+<table class="table table-bordered" id="myTable" *ngIf='habitaciones && habitaciones.length'>
         <thead>
             <tr class="thead-dark">
                 <th (click)="sortTable(0)" scope="col">#</th>
                 <th (click)="sortTable(1)">Numero de Habitacion >> </th>
                 <th (click)="sortTable(2)">Tipo de Habitacion >></th>
                 <th (click)="sortTable(3)">Estado >></th>
-                <th (click)="sortTable(4)">Precio >></th>
+                <th (click)="sortTable(4)">Numero de Personas >></th>
+                <th (click)="sortTable(5)">Precio >></th>
                 
             </tr>
         </thead>
         <tbody id="tbodypulsacion" class="table-primary">
-            <tr *ngFor="let habitacion of habitaciones; index as i ">
+            <tr *ngFor="let habitacion of habitaciones|filtroCliente:searchText; index as i ">
                 <td scope="row">{{ i + 1 }}</td>
-                <td>{{ habitacion.numeroHabitacion}} </td>
-                <td>{{ habitacion.tipo}}</td>
-                <td>{{ habitacion.estado}}</td>
-                <td>{{ habitacion.precio}}</td>
+                <td>{{ habitacion.idhabitacion }} </td>
+                <td>{{ habitacion.tipo }}</td>
+                <td>{{ habitacion.estado }}</td>
+                <td>{{ habitacion.npersonas }}</td>
+                <td>{{ habitacion.precio }}</td>
             </tr>
         </tbody>
     </table>
+    -->
+    <div style="margin-left: 200px; margin-right: 200px;">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id Habitacion</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Numero de personas</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of habitaciones; let i = index">
+                    <td>{{item?.idhabitacion | uppercase}}</td>
+                    <td>{{item?.tipo | uppercase}}</td>
+                    <td>{{item?.estado | uppercase}}</td>
+                    <td>{{item?.npersonas | uppercase}}</td>
+                    <td>{{item?.precio | uppercase}}</td>
+                  </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <br><br>
-
--->

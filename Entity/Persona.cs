@@ -7,7 +7,7 @@ namespace Entity
     {
         [Key]
         
-        [Column(TypeName = "varchar(12)")]
+        [Column(TypeName = "varchar(4)")]
         public string Cedula { get; set; }
 
         [Column(TypeName = "varchar(12)")]
@@ -25,10 +25,10 @@ namespace Entity
         [Column(TypeName = "varchar(10)")]
         public string Sexo { get; set; }
 
-        [Column(TypeName = "varchar(12)")]
+        [Column(TypeName = "int")]
         public int Edad { get; set; }
 
-        [Column(TypeName = "varchar(12)")]
+        [Column(TypeName = "int")]
         public int Telefono { get; set; }
 
         [Column(TypeName = "varchar(25)")]

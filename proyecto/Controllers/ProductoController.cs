@@ -71,7 +71,6 @@ public class ProductoController : ControllerBase
             IdProducto = productoInput.IdProducto,
             Nombre = productoInput.Nombre,
             Tipo = productoInput.Tipo,
-            Cantidad = productoInput.Cantidad,
             Precio = productoInput.Precio,
         };
         return producto;

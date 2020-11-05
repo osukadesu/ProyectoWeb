@@ -6,7 +6,7 @@ namespace HabitacionModel
     {
         public string IdHabitacion { get; set; }
         public string Tipo { get; set; }
-        public int NMinPersonas { get; set; }
+        public int nPersonas { get; set; }
         public string Estado { get; set; }
         public int Precio { get; set; }
     }
@@ -17,7 +17,7 @@ namespace HabitacionModel
         {
             IdHabitacion = habitacion.IdHabitacion;
             Tipo = habitacion.Tipo;
-            NMinPersonas = habitacion.NMinPersonas;
+            nPersonas = habitacion.nPersonas;
             Estado = habitacion.Estado;
             Precio = habitacion.Precio;
         }

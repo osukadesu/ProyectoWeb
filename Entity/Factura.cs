@@ -24,11 +24,21 @@ namespace Entity
         [Column(TypeName = "datetime")]
         public DateTime FechaSalida { get; set; }
         public IList<DetalleProducto> Detalles { get; set; }
+
+        [Column(TypeName = "varchar(4)")]
+        public string Codigo { get; set; }
         [NotMapped]
         public Producto Producto { get; set; }
         [NotMapped]
         public Cliente Cliente { get; set; }
-        [Column(TypeName = "varchar(12)")]
+        [Column(TypeName = "varchar(4)")]
         public string Cedula{ get; set; }
+        
+        [NotMapped]
+        public Habitacion Habitacion { get; set; }
+        
+        [Column(TypeName = "varchar(4)")]
+        public string IdHabitacion { get; set; }
+        
     }
 }

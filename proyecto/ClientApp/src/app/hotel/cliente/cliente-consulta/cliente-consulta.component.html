@@ -25,7 +25,7 @@
                 <th (click)="sortTable(9)">Telefono</th>
                 <th (click)="sortTable(10)">Departamento</th>
                 <th (click)="sortTable(11)">Ciudad</th>
-                <th (click)="sortTable(12)">Modificar/Eliminar</th>
+                <!-- <th (click)="sortTable(12)">Modificar/Eliminar</th> -->
             </tr>
         </thead>
         <tbody id="tbodypulsacion" class="table-primary">
@@ -42,7 +42,7 @@
                 <td>{{ cliente.telefono }}</td>
                 <td>{{ cliente.departamento }}</td>
                 <td>{{ cliente.ciudad }}</td>
-                <td> <a routerLink='/personaEdicion/{{cliente.cedula}}'>Modificar</a> <button id="divcontainer2" class="btn btn-primary">Eliminar</button></td>
+               <!-- <td> <a routerLink='/personaEdicion/{{cliente.cedula}}'>Modificar</a> <button id="divcontainer2" class="btn btn-primary">Eliminar</button></td> --> 
             </tr>
         </tbody>
     </table>

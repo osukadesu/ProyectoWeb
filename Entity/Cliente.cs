@@ -9,9 +9,14 @@ namespace Entity
         public string IdCliente {get; set;}
         [NotMapped]
         public IList<Factura> Facturas { get; set; }
+        
         [NotMapped]
         public Habitacion Habitacion { get; set; }
+        
         [Column(TypeName = "varchar(4)")]
         public string IdHabitacion { get; set; }
+
+         [Column(TypeName = "varchar(4)")]
+        public string Ppal { get; set; }
     }
 }

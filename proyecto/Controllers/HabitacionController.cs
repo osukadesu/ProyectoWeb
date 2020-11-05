@@ -70,7 +70,7 @@ public class HabitacionController : ControllerBase
         {
             IdHabitacion = habitacionInput.IdHabitacion,
             Tipo = habitacionInput.Tipo,
-            NMinPersonas = habitacionInput.NMinPersonas,
+            nPersonas = habitacionInput.nPersonas,
             Estado = habitacionInput.Estado,
             Precio = habitacionInput.Precio,
         };
