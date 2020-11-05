@@ -17,8 +17,8 @@ export class HabitacionRegistroComponent implements OnInit {
     private modalService: NgbModal) { }
 
   ngOnInit() {
-    this.buildForm();
     this.habitacion = new Habitacion();
+    this.buildForm();
   }
 
   private buildForm() {
@@ -26,10 +26,11 @@ export class HabitacionRegistroComponent implements OnInit {
     this.habitacion.idhabitacion;
     this.habitacion.tipo = 'seleccionar';
     this.habitacion.estado = 'seleccionar';
+    this.habitacion.npersonas;
     this.habitacion.precio;
 
     this.formregistro = this.formBuilder.group({
-      idhabitacion: [this.habitacion.idhabitacion, [Validators.required, Validators.maxLength(12), this.ValidaID]],
+      idhabitacion: [this.habitacion.idhabitacion, [Validators.required, Validators.maxLength(4)]],
       tipo: [this.habitacion.tipo, Validators.required],
       npersonas: [this.habitacion.npersonas, Validators.required],
       estado: [this.habitacion.estado, Validators.required],
@@ -37,13 +38,6 @@ export class HabitacionRegistroComponent implements OnInit {
     });
   }
 
-  private ValidaID(control: AbstractControl) {
-    const cantidad = control.value;
-    if (cantidad <= 0 || cantidad >= 9999) {
-      return { validCantidad: true, messageCantidad: 'Cantidad menor que 9999 o igual a 0' };
-    }
-    return null;
-  }
 
   get control() {
     return this.formregistro.controls;

@@ -6,7 +6,7 @@
 </div><br>
 
 <form class="form-inline" class="container" id="Buscador">
-    <input class="form-control mr-sm-2" name="filtroCliente" [(ngModel)]="searchText" type="text" placeholder="Buscar # Habitacion" aria-label="Search">
+    <input class="form-control mr-sm-2" name="filtroHabitacion" [(ngModel)]="searchText" type="text" placeholder="Buscar por # Habitacion" aria-label="Search">
 </form><br><br>
 
 <div class="table-responsive" id="rcorners1">
@@ -24,7 +24,7 @@
             </tr>
         </thead>
         <tbody id="tbodypulsacion" class="table-primary">
-            <tr *ngFor="let habitacion of habitaciones; index as i ">
+            <tr *ngFor="let habitacion of habitaciones|filtroHabitacion:searchText; index as i ">
                 <td scope="row">{{ i + 1 }}</td>
                 <td>{{ habitacion.idhabitacion }} </td>
                 <td>{{ habitacion.tipo }}</td>

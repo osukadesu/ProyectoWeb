@@ -29,6 +29,8 @@ import { RegistroLoginComponent } from './login/registro-login/registro-login.co
 import { FiltroClientePipe } from './pipe/filtro-cliente.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
+import { FiltroEmpleadoPipe } from './pipe/filtro-empleado.pipe';
+import { FiltroHabitacionPipe } from './pipe/filtro-habitacion.pipe';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
     RegistroLoginComponent,
     FiltroClientePipe,
     AlertModalComponent,
+    FiltroEmpleadoPipe,
+    FiltroHabitacionPipe,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

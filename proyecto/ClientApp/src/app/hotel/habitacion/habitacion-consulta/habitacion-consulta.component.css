@@ -1,9 +1,10 @@
 #Buscador {
-    width: 20%;
-    position: relative;
-    left: 29%;
-    top: 80px;
-  }
+  width: 20%;
+  position: relative;
+  left: 38%;
+  top: 20px;
+  border-radius: 25px;
+}
   
   button[type="submit"] {
     position: relative;

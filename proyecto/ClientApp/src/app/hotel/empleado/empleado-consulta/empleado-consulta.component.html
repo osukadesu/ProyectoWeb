@@ -6,7 +6,7 @@
 </div><br>
 
 <form class="form-inline" class="container" id="Buscador">
-    <input class="form-control mr-sm-2" name="filtroCliente" [(ngModel)]="searchText" type="text" placeholder="Buscar por Cedula" aria-label="Search">
+    <input class="form-control mr-sm-2" name="filtroEmpleado" [(ngModel)]="searchText" type="text" placeholder="Buscar por Cedula" aria-label="Search">
 </form><br><br>
 
 <div class="table-responsive" id="rcorners1">
@@ -24,14 +24,14 @@
                 <th (click)="sortTable(8)">Telefono>></th>
                 <th (click)="sortTable(10)">Jornada>></th>
                 <th (click)="sortTable(11)">Cargo>></th>
-                <th (click)="sortTable(12)">Jefe>></th>
+                <th (click)="sortTable(12)">Cedula Jefe>></th>
                 <th (click)="sortTable(13)">Departamento>></th>
                 <th (click)="sortTable(14)">Ciudad>></th>
                
             </tr>
         </thead>
         <tbody id="tbodypulsacion" class="table-primary">
-            <tr *ngFor="let empleado of empleados; index as i ">
+            <tr *ngFor="let empleado of empleados|filtroEmpleado:searchText; index as i ">
                 <td scope="row">{{ i + 1 }}</td>
                 <td>{{ empleado.cedula}} </td>
                 <td>{{ empleado.primerNombre }}</td>

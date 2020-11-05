@@ -93,8 +93,8 @@
         <div>
             <label>Email</label>
             <input type="text" id="email" name="email"
-            [ngClass]="{'is-invalid': control.email.errors && control.email.touched}"
-            formControlName="email" placeholder="Email">
+                [ngClass]="{'is-invalid': control.email.errors && control.email.touched}" formControlName="email"
+                placeholder="Email">
             <div *ngIf="control.email.errors" class="invalid-feedback">
                 <div *ngIf="control.email.errors.required">Se requiere el email</div>
             </div>
@@ -120,12 +120,11 @@
             </div>
         </div>
         <br>
-        <button id="divcontainer2"  class="btn btn-primary" (click)="onSubmit()"
-    [disabled]="formregistro.invalid">
-    <span>
-        <a href="https://localhost:5001/clienteregistro"></a>
-    </span>
-    Guardar</button>
+        <button id="divcontainer2" class="btn btn-primary" (click)="onSubmit()" [disabled]="formregistro.invalid">
+            <span>
+                <a href="https://localhost:5001/clienteregistro"></a>
+            </span>
+            Guardar</button>
     </form>
 </div>
 
@@ -135,8 +134,7 @@
     <br>
     <br>
     <div>
-        <button type="button" id="divcontainer2" class="btn btn-primary" data-toggle="modal"
-            data-target="#myModal">
+        <button type="button" id="divcontainer2" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
             Registrar Acompañante
         </button>
     </div>
@@ -160,8 +158,8 @@
                             <div class="form-group">
                                 <label>Cedula Cliente Principal</label>
                                 <input id= ppal name="ppal"
-                                    [ngClass]="{'is-invalid': control2.ppal.errors && control.ppal.touched}"
-                                    type="text"  formControlName="ppal" placeholder="Cedula">
+                                    [ngClass]="{'is-invalid': control2.ppal.errors && control.ppal.touched}" type="text"
+                                     formControlName="ppal" placeholder="Cedula">
                                 <div *ngIf="control2.ppal.errors" class="invalid-feedback">
                                     <div *ngIf="control2.ppal.errors.required">Se requiere la cedula</div>
                                     <div *ngIf="control2.ppal.errors.maxlength">Caracteres mayores a 12</div>
@@ -260,14 +258,13 @@
 
                             <div>
                                 <label>Email</label>
-                                <input type="text" id="email" name="email" 
-                                [ngClass]="{'is-invalid': control2.email.errors && control2.email.touched}"
-                                formControlName="email"
-                                    placeholder="Email">
-                                    <div *ngIf="control2.email.errors" class="invalid-feedback">
-                                        <div *ngIf="control2.email.errors.required">Se requiere el
-                                            departamento</div>
-                                    </div>
+                                <input type="text" id="email" name="email"
+                                    [ngClass]="{'is-invalid': control2.email.errors && control2.email.touched}"
+                                    formControlName="email" placeholder="Email">
+                                <div *ngIf="control2.email.errors" class="invalid-feedback">
+                                    <div *ngIf="control2.email.errors.required">Se requiere el
+                                        departamento</div>
+                                </div>
                             </div>
 
                             <div>
@@ -301,7 +298,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-success" (click)="onSubmit2()"
-                        [disabled]="formregistro.invalid">
+                        [disabled]="formregistro2.invalid">
                         <span>
                             <a href="https://localhost:5001/clienteregistro"></a>
                         </span>
