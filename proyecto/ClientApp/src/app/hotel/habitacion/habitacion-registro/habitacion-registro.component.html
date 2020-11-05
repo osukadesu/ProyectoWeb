@@ -8,11 +8,10 @@
 
         <div class="form-group">
             <label>Numero de Habitacion</label>
-            <input  id="idhabitacion" name="idhabitacion" [ngClass]="{'is-invalid': control.idhabitacion.errors && control.idhabitacion.touched}"
-                type="text"  formControlName="idhabitacion" placeholder="Numero de Habitacion">
+            <input type="text" id="idhabitacion" name="idhabitacion" [ngClass]="{'is-invalid': control.idhabitacion.errors && control.idhabitacion.touched}"
+                 formControlName="idhabitacion" placeholder="Numero de Habitacion">
             <div *ngIf="control.idhabitacion.errors" class="invalid-feedback">
                 <div *ngIf="control.idhabitacion.errors.required">Se requiere el numero de la habitacion</div>
-                <div *ngIf="control.idhabitacion.errors.maxlength">Caracteres mayores a 4</div>
             </div>
         </div>
 
@@ -33,7 +32,7 @@
 
         <div class="form-group">
             <label>Numero de Personas</label>
-            <input  type="number" id="npersonas" name="npersonas" [ngClass]="{'is-invalid': control.npersonas.errors && control.npersonas.touched}"
+            <input type="number" id="npersonas" name="npersonas" [ngClass]="{'is-invalid': control.npersonas.errors && control.npersonas.touched}"
             formControlName="npersonas">
             <div *ngIf="control.npersonas.errors" class="invalid-feedback">
                 <div *ngIf="control.npersonas.errors.required">Se requiere el numero de personas</div>

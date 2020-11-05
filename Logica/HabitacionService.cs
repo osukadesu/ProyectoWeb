@@ -18,6 +18,7 @@ namespace Logica
         {
             try
             {
+                //habitacion.IdHabitacion = (_context.Habitaciones.ToList().Count+1).ToString();
                 _context.Habitaciones.Add(habitacion);
                 _context.SaveChanges();
                 return new GuardarHabitacionResponse(habitacion);

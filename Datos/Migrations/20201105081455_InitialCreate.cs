@@ -14,7 +14,7 @@ namespace Datos.Migrations
                     IdHabitacion = table.Column<string>(type: "varchar(4)", nullable: false),
                     Tipo = table.Column<string>(type: "varchar(8)", nullable: true),
                     nPersonas = table.Column<int>(type: "int", nullable: false),
-                    Estado = table.Column<string>(type: "varchar(12)", nullable: true),
+                    Estado = table.Column<string>(type: "varchar(16)", nullable: true),
                     Precio = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

@@ -33,6 +33,7 @@ export class EmpleadoRegistroComponent implements OnInit {
     this.empleado.ciudad = '';
     this.empleado.cargo = 'seleccionar';
     this.empleado.jornada = 'seleccionar';
+    this.empleado.jefe='seleccionar';
 
       this.formregistro = this.formBuilder.group({
       cedula: [this.empleado.cedula, [Validators.required, Validators.maxLength(12), this.ValidaCedula]],
@@ -47,6 +48,7 @@ export class EmpleadoRegistroComponent implements OnInit {
       jornada: [this.empleado.jornada, Validators.required],
       ciudad: [this.empleado.ciudad, Validators.required],
       telefono: [this.empleado.telefono, Validators.required],
+      jefe: [this.empleado.jefe, Validators.required],
     });
   }
 

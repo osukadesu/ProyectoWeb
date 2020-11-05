@@ -99,7 +99,7 @@ namespace Datos.Migrations
                         .HasColumnType("varchar(4)");
 
                     b.Property<string>("Estado")
-                        .HasColumnType("varchar(12)");
+                        .HasColumnType("varchar(16)");
 
                     b.Property<int>("Precio")
                         .HasColumnType("int");
@@ -276,7 +276,7 @@ namespace Datos.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entity.Persona", null)
+                    b.HasOne("Entity.Empleado", null)
                         .WithMany()
                         .HasForeignKey("Jefe");
                 });

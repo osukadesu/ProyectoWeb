@@ -123,11 +123,12 @@
 
         <div>
             <label>Jefe</label>
-            <select id="jefe" name="jefe">
-                <option value="seleccionar jefe">Seleccionar</option>
-                <option value="000">Soy el jefe</option>
-                <option value="123">Director 123</option>
-            </select>
+            <input type="text" id="jefe" name="jefe"
+            [ngClass]="{'is-invalid': control.jefe.errors && control.jefe.touched}"
+            formControlName="jefe" placeholder="jefe">
+        <div *ngIf="control.jefe.errors" class="invalid-feedback">
+            <div *ngIf="control.jefe.errors.required">Se requiere el jefe</div>
+        </div>
         </div>
 
         <div>

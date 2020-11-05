@@ -15,7 +15,7 @@ namespace Entity
         [Column(TypeName = "int")]
         public int nPersonas { get; set; }
 
-        [Column(TypeName = "varchar(12)")]
+        [Column(TypeName = "varchar(16)")]
         public string Estado { get; set; }
 
         [Column(TypeName = "int")]

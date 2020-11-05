@@ -50,7 +50,7 @@ namespace Datos
 
             modelBuilder
                 .Entity<Empleado>()
-                .HasOne<Persona>()
+                .HasOne<Empleado>()
                 .WithMany()
                 .HasForeignKey(p => p.Jefe);
 

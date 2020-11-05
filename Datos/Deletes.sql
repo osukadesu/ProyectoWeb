@@ -1,4 +1,4 @@
-USE[HotelDb];
+USE[Hotel];
 DROP TABLE dbo.DetalleProducto;
 DROP TABLE dbo.Productos;
 DROP TABLE dbo.Facturas;
