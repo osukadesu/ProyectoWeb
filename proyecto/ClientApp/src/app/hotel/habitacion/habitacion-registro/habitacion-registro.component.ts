@@ -32,12 +32,11 @@ export class HabitacionRegistroComponent implements OnInit {
     this.formregistro = this.formBuilder.group({
       idhabitacion: [this.habitacion.idhabitacion, [Validators.required, Validators.maxLength(4)]],
       tipo: [this.habitacion.tipo, Validators.required],
-      npersonas: [this.habitacion.npersonas, Validators.required],
       estado: [this.habitacion.estado, Validators.required],
+      npersonas: [this.habitacion.npersonas, Validators.required],
       precio: [this.habitacion.precio, Validators.required],
     });
   }
-
 
   get control() {
     return this.formregistro.controls;

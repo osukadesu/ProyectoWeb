@@ -13,9 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AdministracionComponent } from './hotel/administracion/administracion.component';
 import { ClienteGestionComponent } from './hotel/cliente/cliente-gestion/cliente-gestion.component';
 import { ClienteRegistroComponent } from './hotel/cliente/cliente-registro/cliente-registro.component';
-import { HabitacionConsultaComponent } from './hotel/habitacion/habitacion-consulta/habitacion-consulta.component';
-import { HabitacionRegistroComponent } from './hotel/habitacion/habitacion-registro/habitacion-registro.component';
-import { HabitacionGestionComponent } from './hotel/habitacion/habitacion-gestion/habitacion-gestion.component';
 import { FacturaConsultaComponent } from './hotel/factura/factura-consulta/factura-consulta.component';
 import { FacturaRegistroComponent } from './hotel/factura/factura-registro/factura-registro.component';
 import { FacturaGestionComponent } from './hotel/factura/factura-gestion/factura-gestion.component';
@@ -31,6 +28,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 import { FiltroEmpleadoPipe } from './pipe/filtro-empleado.pipe';
 import { FiltroHabitacionPipe } from './pipe/filtro-habitacion.pipe';
+import { HabitacionRegistroComponent } from './hotel/habitacion/habitacion-registro/habitacion-registro.component';
+import { HabitacionConsultaComponent } from './hotel/habitacion/habitacion-consulta/habitacion-consulta.component';
+import { HabitacionGestionComponent } from './hotel/habitacion/habitacion-gestion/habitacion-gestion.component';
 
 @NgModule({
   declarations: [
@@ -44,9 +44,6 @@ import { FiltroHabitacionPipe } from './pipe/filtro-habitacion.pipe';
     ClienteGestionComponent,
     FooterComponent,
     AdministracionComponent,
-    HabitacionConsultaComponent,
-    HabitacionRegistroComponent,
-    HabitacionGestionComponent,
     FacturaConsultaComponent,
     FacturaRegistroComponent,
     FacturaGestionComponent,
@@ -59,6 +56,9 @@ import { FiltroHabitacionPipe } from './pipe/filtro-habitacion.pipe';
     AlertModalComponent,
     FiltroEmpleadoPipe,
     FiltroHabitacionPipe,
+    HabitacionRegistroComponent,
+    HabitacionConsultaComponent,
+    HabitacionGestionComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

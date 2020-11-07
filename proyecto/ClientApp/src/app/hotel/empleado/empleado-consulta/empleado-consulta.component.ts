@@ -13,10 +13,8 @@ export class EmpleadoConsultaComponent implements OnInit {
   constructor(private empleadoService: EmpleadoService) { }
 
   ngOnInit(){
-    this.empleados=[];
     this.empleadoService.get().subscribe(result => {
       this.empleados = result;
-      alert(JSON.stringify(this.empleados));
       });
   }
 

@@ -14,10 +14,8 @@ export class HabitacionConsultaComponent implements OnInit {
   constructor(private habitacionService: HabitacionService) { }
 
   ngOnInit(){
-    this.habitaciones=[];
     this.habitacionService.get().subscribe(result => {
       this.habitaciones = result;
-      alert(JSON.stringify(this.habitaciones));
       });
   }
 

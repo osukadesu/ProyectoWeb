@@ -53,9 +53,7 @@
 
   
   #rcorners1 {
-    border: 2px solid #ffffff;
     border-radius: 25px;
-    background: #007bff;
     padding: 20px;
     width: 98%;
     position: relative;
