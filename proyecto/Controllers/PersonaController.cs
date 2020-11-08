@@ -68,16 +68,13 @@ public class PersonaController : ControllerBase
     {
         var persona = new Persona
         {
-            Cedula = personaInput.Cedula,
-            PrimerNombre = personaInput.PrimerNombre,
-            SegundoNombre = personaInput.SegundoNombre,
-            PrimerApellido = personaInput.PrimerApellido,
-            SegundoApellido = personaInput.SegundoApellido,
+            Cedula = personaInput.Cedula, 
+            Nombre = personaInput.Nombre,
+            Apellido =personaInput.Apellido,
             Sexo = personaInput.Sexo,
             Edad = personaInput.Edad,
             Email = personaInput.Email,
             Telefono = personaInput.Telefono,
-            Departamento = personaInput.Departamento,
             Ciudad = personaInput.Ciudad,
         };
         return persona;

@@ -6,15 +6,15 @@ namespace Entity
     public class Empleado : Persona
     {
         [Column(TypeName = "varchar(4)")]
-         public string IdEmpleado { get; set; }
+        public string IdEmpleado { get; set; }
 
-        [Column(TypeName = "varchar(14)")]
+        [Column(TypeName = "varchar(15)")]
         public string Cargo { get; set; }
 
         [Column(TypeName = "varchar(8)")]
         public string Jornada { get; set; }
-        
-        [Column(TypeName = "varchar(4)")]
+
+        [Column(TypeName = "varchar(12)")]
         public string Jefe { get; set; }
     }
 }

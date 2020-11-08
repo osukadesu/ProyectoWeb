@@ -6,21 +6,14 @@ namespace Entity
     public class Persona
     {
         [Key]
-        
-        [Column(TypeName = "varchar(4)")]
+        [Column(TypeName = "varchar(12)")]
         public string Cedula { get; set; }
 
         [Column(TypeName = "varchar(12)")]
-        public string PrimerNombre { get; set; }
+        public string Nombre { get; set; }
 
         [Column(TypeName = "varchar(12)")]
-        public string SegundoNombre { get; set; }
-
-        [Column(TypeName = "varchar(12)")]
-        public string PrimerApellido { get; set; }
-
-        [Column(TypeName = "varchar(12)")]
-        public string SegundoApellido { get; set; }
+        public string Apellido { get; set; }
 
         [Column(TypeName = "varchar(10)")]
         public string Sexo { get; set; }
@@ -33,9 +26,6 @@ namespace Entity
 
         [Column(TypeName = "varchar(25)")]
         public string Email { get; set; }
-
-        [Column(TypeName = "varchar(14)")]
-        public string Departamento { get; set; }
 
         [Column(TypeName = "varchar(14)")]
         public string Ciudad { get; set; }

@@ -20,64 +20,25 @@ export class ClienteRegistroComponent implements OnInit {
   ngOnInit() {
     this.cliente = new Cliente();
     this.buildForm();
-    this.buildForm2();
   }
-
   private buildForm() {
     this.cliente = new Cliente();
     this.cliente.cedula = '';
-    this.cliente.primerNombre = '';
-    this.cliente.segundoNombre = '';
-    this.cliente.primerApellido = '';
-    this.cliente.segundoApellido = '';
+    this.cliente.nombre = '';
+    this.cliente.apellido = '';
     this.cliente.sexo = 'seleccionar';
-    this.cliente.departamento = '';
-    this.cliente.ciudad = '';
-    this.cliente.email = '';
-    this.cliente.edad;
-    this.cliente.telefono;
-
-    this.formregistro = this.formBuilder.group({
-      cedula: [this.cliente.cedula, [Validators.required, Validators.maxLength(12), this.ValidaCedula]],
-      primerNombre: [this.cliente.primerNombre, Validators.required],
-      segundoNombre: [this.cliente.segundoNombre, Validators.required],
-      primerApellido: [this.cliente.primerApellido, Validators.required],
-      segundoApellido: [this.cliente.segundoApellido, Validators.required],
-      sexo: [this.cliente.sexo, [Validators.required, this.ValidaSexo]],
-      edad: [this.cliente.edad, [Validators.required, Validators.min(1)]],
-      departamento: [this.cliente.departamento, Validators.required],
-      ciudad: [this.cliente.ciudad, Validators.required],
-      email: [this.cliente.email, Validators.required],
-      telefono: [this.cliente.telefono, Validators.required],
-    });
-  }
-
-  private buildForm2() {
-    this.cliente = new Cliente();
-    this.cliente.cedula = '';
-    this.cliente.primerNombre = '';
-    this.cliente.segundoNombre = '';
-    this.cliente.primerApellido = '';
-    this.cliente.segundoApellido = '';
-    this.cliente.sexo = 'seleccionar';
-    this.cliente.departamento = '';
-    this.cliente.ciudad = '';
     this.cliente.email = '';
     this.cliente.edad;
     this.cliente.telefono;
     this.cliente.ppal;
 
-    this.formregistro2 = this.formBuilder.group({
-      ppal: [this.cliente.ppal, [Validators.required, Validators.maxLength(12), this.ValidaCedula2]],
-      cedula: [this.cliente.cedula, [Validators.required, Validators.maxLength(12), this.ValidaCedula2]],
-      primerNombre: [this.cliente.primerNombre, Validators.required],
-      segundoNombre: [this.cliente.segundoNombre, Validators.required],
-      primerApellido: [this.cliente.primerApellido, Validators.required],
-      segundoApellido: [this.cliente.segundoApellido, Validators.required],
+    this.formregistro = this.formBuilder.group({
+      ppal: [this.cliente.ppal, [Validators.required, Validators.maxLength(12), this.ValidaCedula]],
+      cedula: [this.cliente.cedula, [Validators.required, Validators.maxLength(12), this.ValidaCedula]],
+      nombre: [this.cliente.nombre, Validators.required],
+      apellido: [this.cliente.apellido, Validators.required],
       sexo: [this.cliente.sexo, [Validators.required, this.ValidaSexo]],
       edad: [this.cliente.edad, [Validators.required, Validators.min(1)]],
-      departamento: [this.cliente.departamento, Validators.required],
-      ciudad: [this.cliente.ciudad, Validators.required],
       email: [this.cliente.email, Validators.required],
       telefono: [this.cliente.telefono, Validators.required],
     });

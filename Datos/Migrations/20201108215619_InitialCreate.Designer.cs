@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Datos.Migrations
 {
     [DbContext(typeof(HotelContext))]
-    [Migration("20201105081455_InitialCreate")]
+    [Migration("20201108215619_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,90 +21,16 @@ namespace Datos.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Entity.DetalleProducto", b =>
-                {
-                    b.Property<string>("Codigo")
-                        .HasColumnType("varchar(4)");
-
-                    b.Property<int>("Cantidad")
-                        .HasColumnType("int");
-
-                    b.Property<string>("FacturaIdFactura")
-                        .HasColumnType("varchar(4)");
-
-                    b.Property<string>("IdHabitacion")
-                        .HasColumnType("varchar(4)");
-
-                    b.Property<string>("IdProducto")
-                        .HasColumnType("varchar(4)");
-
-                    b.HasKey("Codigo");
-
-                    b.HasIndex("FacturaIdFactura");
-
-                    b.HasIndex("IdHabitacion");
-
-                    b.HasIndex("IdProducto");
-
-                    b.ToTable("DetalleProducto");
-                });
-
-            modelBuilder.Entity("Entity.Factura", b =>
-                {
-                    b.Property<string>("IdFactura")
-                        .HasColumnType("varchar(4)");
-
-                    b.Property<int>("Cantidad")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Cedula")
-                        .HasColumnType("varchar(4)");
-
-                    b.Property<string>("Codigo")
-                        .HasColumnType("varchar(4)");
-
-                    b.Property<DateTime>("FechaEntrada")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime>("FechaFactura")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime>("FechaSalida")
-                        .HasColumnType("datetime");
-
-                    b.Property<string>("IdHabitacion")
-                        .HasColumnType("varchar(4)");
-
-                    b.Property<int>("Iva")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Subtotal")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Total")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdFactura");
-
-                    b.HasIndex("Cedula");
-
-                    b.HasIndex("Codigo");
-
-                    b.HasIndex("IdHabitacion");
-
-                    b.ToTable("Facturas");
-                });
-
             modelBuilder.Entity("Entity.Habitacion", b =>
                 {
                     b.Property<string>("IdHabitacion")
                         .HasColumnType("varchar(4)");
 
                     b.Property<string>("Estado")
-                        .HasColumnType("varchar(16)");
+                        .HasColumnType("varchar(13)");
 
-                    b.Property<int>("Precio")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Precio")
+                        .HasColumnType("decimal");
 
                     b.Property<string>("Tipo")
                         .HasColumnType("varchar(8)");
@@ -120,12 +46,12 @@ namespace Datos.Migrations
             modelBuilder.Entity("Entity.Persona", b =>
                 {
                     b.Property<string>("Cedula")
-                        .HasColumnType("varchar(4)");
+                        .HasColumnType("varchar(12)");
+
+                    b.Property<string>("Apellido")
+                        .HasColumnType("varchar(12)");
 
                     b.Property<string>("Ciudad")
-                        .HasColumnType("varchar(14)");
-
-                    b.Property<string>("Departamento")
                         .HasColumnType("varchar(14)");
 
                     b.Property<string>("Discriminator")
@@ -138,16 +64,7 @@ namespace Datos.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("varchar(25)");
 
-                    b.Property<string>("PrimerApellido")
-                        .HasColumnType("varchar(12)");
-
-                    b.Property<string>("PrimerNombre")
-                        .HasColumnType("varchar(12)");
-
-                    b.Property<string>("SegundoApellido")
-                        .HasColumnType("varchar(12)");
-
-                    b.Property<string>("SegundoNombre")
+                    b.Property<string>("Nombre")
                         .HasColumnType("varchar(12)");
 
                     b.Property<string>("Sexo")
@@ -163,23 +80,39 @@ namespace Datos.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Persona");
                 });
 
-            modelBuilder.Entity("Entity.Producto", b =>
+            modelBuilder.Entity("Entity.Reserva", b =>
                 {
-                    b.Property<string>("IdProducto")
+                    b.Property<string>("IdReserva")
                         .HasColumnType("varchar(4)");
 
-                    b.Property<string>("Nombre")
+                    b.Property<string>("Cedula")
                         .HasColumnType("varchar(12)");
 
-                    b.Property<int>("Precio")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("FechaEntrada")
+                        .HasColumnType("datetime");
 
-                    b.Property<string>("Tipo")
-                        .HasColumnType("varchar(15)");
+                    b.Property<DateTime>("FechaReserva")
+                        .HasColumnType("datetime");
 
-                    b.HasKey("IdProducto");
+                    b.Property<DateTime>("FechaSalida")
+                        .HasColumnType("datetime");
 
-                    b.ToTable("Productos");
+                    b.Property<string>("IdHabitacion")
+                        .HasColumnType("varchar(4)");
+
+                    b.Property<decimal>("Iva")
+                        .HasColumnType("decimal");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal");
+
+                    b.HasKey("IdReserva");
+
+                    b.HasIndex("Cedula");
+
+                    b.HasIndex("IdHabitacion");
+
+                    b.ToTable("Reservas");
                 });
 
             modelBuilder.Entity("Entity.Cliente", b =>
@@ -193,7 +126,7 @@ namespace Datos.Migrations
                         .HasColumnType("varchar(4)");
 
                     b.Property<string>("Ppal")
-                        .HasColumnType("varchar(4)");
+                        .HasColumnType("varchar(12)");
 
                     b.HasIndex("IdHabitacion");
 
@@ -207,13 +140,13 @@ namespace Datos.Migrations
                     b.HasBaseType("Entity.Persona");
 
                     b.Property<string>("Cargo")
-                        .HasColumnType("varchar(14)");
+                        .HasColumnType("varchar(15)");
 
                     b.Property<string>("IdEmpleado")
                         .HasColumnType("varchar(4)");
 
                     b.Property<string>("Jefe")
-                        .HasColumnType("varchar(4)");
+                        .HasColumnType("varchar(12)");
 
                     b.Property<string>("Jornada")
                         .HasColumnType("varchar(8)");
@@ -223,30 +156,11 @@ namespace Datos.Migrations
                     b.HasDiscriminator().HasValue("Empleado");
                 });
 
-            modelBuilder.Entity("Entity.DetalleProducto", b =>
-                {
-                    b.HasOne("Entity.Factura", null)
-                        .WithMany("Detalles")
-                        .HasForeignKey("FacturaIdFactura");
-
-                    b.HasOne("Entity.Habitacion", null)
-                        .WithMany()
-                        .HasForeignKey("IdHabitacion");
-
-                    b.HasOne("Entity.Producto", null)
-                        .WithMany()
-                        .HasForeignKey("IdProducto");
-                });
-
-            modelBuilder.Entity("Entity.Factura", b =>
+            modelBuilder.Entity("Entity.Reserva", b =>
                 {
                     b.HasOne("Entity.Cliente", null)
                         .WithMany()
                         .HasForeignKey("Cedula");
-
-                    b.HasOne("Entity.DetalleProducto", null)
-                        .WithMany()
-                        .HasForeignKey("Codigo");
 
                     b.HasOne("Entity.Habitacion", null)
                         .WithMany()

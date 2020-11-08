@@ -24,29 +24,21 @@ export class EmpleadoRegistroComponent implements OnInit {
   private buildForm() {
     this.empleado = new Empleado();
     this.empleado.cedula = '';
-    this.empleado.primerNombre = '';
-    this.empleado.segundoNombre = '';
-    this.empleado.primerApellido = '';
-    this.empleado.segundoApellido = '';
+    this.empleado.nombre = '';
+    this.empleado.apellido = '';
     this.empleado.sexo = 'seleccionar';
-    this.empleado.departamento = '';
-    this.empleado.ciudad = '';
     this.empleado.cargo = 'seleccionar';
     this.empleado.jornada = 'seleccionar';
     this.empleado.jefe='seleccionar';
 
       this.formregistro = this.formBuilder.group({
       cedula: [this.empleado.cedula, [Validators.required, Validators.maxLength(12), this.ValidaCedula]],
-      primerNombre: [this.empleado.primerNombre, Validators.required],
-      segundoNombre: [this.empleado.segundoNombre, Validators.required],
-      primerApellido: [this.empleado.primerApellido, Validators.required],
-      segundoApellido: [this.empleado.segundoApellido, Validators.required],
+      nombre: [this.empleado.nombre, Validators.required],
+      apellido: [this.empleado.apellido, Validators.required],
       sexo: [this.empleado.sexo, [Validators.required, this.ValidaSexo]],
       edad: [this.empleado.edad, [Validators.required, Validators.min(18), this.ValidaEdad]],
-      departamento: [this.empleado.departamento, Validators.required],
       cargo: [this.empleado.cargo, Validators.required],
       jornada: [this.empleado.jornada, Validators.required],
-      ciudad: [this.empleado.ciudad, Validators.required],
       telefono: [this.empleado.telefono, Validators.required],
       jefe: [this.empleado.jefe, Validators.required],
     });

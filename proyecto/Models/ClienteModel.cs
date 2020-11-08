@@ -14,17 +14,13 @@ namespace ClienteModel
         public ClienteViewModel(Cliente cliente)
         {
             Cedula = cliente.Cedula;
-            PrimerNombre = cliente.PrimerNombre;
-            SegundoNombre = cliente.SegundoNombre;
-            PrimerApellido = cliente.PrimerApellido;
-            SegundoApellido = cliente.SegundoApellido;
+            Nombre = cliente.Nombre;
             Edad = cliente.Edad;
             Sexo = cliente.Sexo;
             Email = cliente.Email;
             Telefono= cliente.Telefono;
-            Departamento = cliente.Departamento;
             Ciudad = cliente.Ciudad;
-            Ppal = cliente.Ppal;
+            Ppal = cliente.Cedula;
             IdHabitacion = cliente.IdHabitacion;
         }
     }

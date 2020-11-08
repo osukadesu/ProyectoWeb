@@ -81,17 +81,14 @@ public class ClienteController : ControllerBase
             new Cliente {
                 Cedula = clienteInput.Cedula,
                 IdCliente = clienteInput.Cedula,
-                PrimerNombre = clienteInput.PrimerNombre,
-                SegundoNombre = clienteInput.SegundoNombre,
-                PrimerApellido = clienteInput.PrimerApellido,
-                SegundoApellido = clienteInput.SegundoApellido,
+                Nombre = clienteInput.Nombre,
+                Apellido =clienteInput.Apellido,
                 Edad = clienteInput.Edad,
                 Sexo = clienteInput.Sexo,
                 Email = clienteInput.Email,
                 Telefono = clienteInput.Telefono,
-                Departamento = clienteInput.Departamento,
                 Ciudad = clienteInput.Ciudad,
-                Ppal = clienteInput.Ppal,
+                Ppal = clienteInput.Cedula,
                 IdHabitacion = clienteInput.IdHabitacion
             };
         return cliente;

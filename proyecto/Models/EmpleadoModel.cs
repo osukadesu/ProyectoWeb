@@ -17,18 +17,15 @@ namespace EmpleadoModel
         {
             Cedula = empleado.Cedula;
             IdEmpleado = empleado.Cedula;
-            PrimerNombre = empleado.PrimerNombre;
-            SegundoNombre = empleado.SegundoNombre;
-            PrimerApellido = empleado.PrimerApellido;
-            SegundoApellido = empleado.SegundoApellido;
+            Nombre=empleado.Nombre;
+            Apellido=empleado.Apellido;
             Edad = empleado.Edad;
             Sexo = empleado.Sexo;
             Email = empleado.Email;
             Telefono= empleado.Telefono;
-            Departamento = empleado.Departamento;
             Ciudad = empleado.Ciudad;
             IdEmpleado = empleado.IdEmpleado;
-            Jefe = empleado.Jefe;
+            Jefe = empleado.Cedula;
             Jornada = empleado.Jornada;
             Cargo = empleado.Cargo;
         }

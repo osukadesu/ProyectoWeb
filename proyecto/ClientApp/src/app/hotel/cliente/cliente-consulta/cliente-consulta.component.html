@@ -15,16 +15,12 @@
             <tr class="thead-dark">
                 <th (click)="sortTable(0)" scope="col">#</th>
                 <th (click)="sortTable(1)">Cedula</th>
-                <th (click)="sortTable(2)">Primer Nombre</th>
-                <th (click)="sortTable(3)">Segundo Nombre</th>
-                <th (click)="sortTable(4)">Primer Apellido</th>
-                <th (click)="sortTable(5)">Segundo Apellido</th>
+                <th (click)="sortTable(2)">Nombre</th>
+                <th (click)="sortTable(5)">Apellido</th>
                 <th (click)="sortTable(6)">Edad</th>
                 <th (click)="sortTable(7)">Email</th>
                 <th (click)="sortTable(8)">Sexo</th>
                 <th (click)="sortTable(9)">Telefono</th>
-                <th (click)="sortTable(10)">Departamento</th>
-                <th (click)="sortTable(11)">Ciudad</th>
                 <!-- <th (click)="sortTable(12)">Modificar/Eliminar</th> -->
             </tr>
         </thead>
@@ -32,16 +28,12 @@
             <tr *ngFor="let cliente of clientes|filtroCliente:searchText; index as i ">
                 <td scope="row">{{ i + 1 }}</td>
                 <td>{{ cliente.cedula }} </td>
-                <td>{{ cliente.primerNombre}}</td>
-                <td>{{ cliente.segundoNombre }}</td>
-                <td>{{ cliente.primerApellido }}</td>
-                <td>{{ cliente.segundoApellido }}</td>
+                <td>{{ cliente.nombre}}</td>
+                <td>{{ cliente.apellido }}</td>
                 <td>{{ cliente.edad }}</td>
                 <td>{{ cliente.email }}</td>
                 <td>{{ cliente.sexo }}</td>
                 <td>{{ cliente.telefono }}</td>
-                <td>{{ cliente.departamento }}</td>
-                <td>{{ cliente.ciudad }}</td>
                <!-- <td> <a routerLink='/personaEdicion/{{cliente.cedula}}'>Modificar</a> <button id="divcontainer2" class="btn btn-primary">Eliminar</button></td> --> 
             </tr>
         </tbody>
