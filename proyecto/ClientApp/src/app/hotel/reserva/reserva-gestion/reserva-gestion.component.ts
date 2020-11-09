@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HabitacionService } from 'src/app/services/habitacion.service';
+import { Habitacion } from '../../models/habitacion';
 
 @Component({
   selector: 'app-reserva-gestion',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reserva-gestion.component.css']
 })
 export class ReservaGestionComponent implements OnInit {
+  habitaciones: Habitacion[];
+  constructor(private habitacionService: HabitacionService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(){
+    this.habitacionService.get().subscribe(result => {
+      this.habitaciones = result;
+      });
   }
 
 }

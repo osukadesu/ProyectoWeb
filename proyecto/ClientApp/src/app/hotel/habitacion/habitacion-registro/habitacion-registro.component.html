@@ -8,10 +8,10 @@
 
         <div class="form-group">
             <label>Numero de Habitacion</label>
-            <input type="text" id="idhabitacion" name="idhabitacion" [ngClass]="{'is-invalid': control.idhabitacion.errors && control.idhabitacion.touched}"
-                 formControlName="idhabitacion" placeholder="Numero de Habitacion">
-            <div *ngIf="control.idhabitacion.errors" class="invalid-feedback">
-                <div *ngIf="control.idhabitacion.errors.required">Se requiere el numero de la habitacion</div>
+            <input type="text" id="idHabitacion" name="idHabitacion" [ngClass]="{'is-invalid': control.idHabitacion.errors && control.idHabitacion.touched}"
+                 formControlName="idHabitacion" placeholder="Numero de Habitacion">
+            <div *ngIf="control.idHabitacion.errors" class="invalid-feedback">
+                <div *ngIf="control.idHabitacion.errors.required">Se requiere el numero de la habitacion</div>
             </div>
         </div>
 
@@ -32,10 +32,10 @@
 
         <div class="form-group">
             <label>Numero de Personas</label>
-            <input type="number" id="npersonas" name="npersonas" [ngClass]="{'is-invalid': control.npersonas.errors && control.npersonas.touched}"
-            formControlName="npersonas">
-            <div *ngIf="control.npersonas.errors" class="invalid-feedback">
-                <div *ngIf="control.npersonas.errors.required">Se requiere el numero de personas</div>
+            <input type="number" id="nPersonas" name="nPersonas" [ngClass]="{'is-invalid': control.nPersonas.errors && control.nPersonas.touched}"
+            formControlName="nPersonas">
+            <div *ngIf="control.nPersonas.errors" class="invalid-feedback">
+                <div *ngIf="control.nPersonas.errors.required">Se requiere el numero de personas</div>
             </div>
         </div>
 

@@ -77,6 +77,15 @@ body {
     font-family: "Cormorant Garamond", serif;
   }
   
+  h3 {
+    position: relative;
+    text-align: center;
+    color: #000000;
+    font-size: 20px;
+    font-family: "Cormorant Garamond", serif;
+  }
+  
+
   a {
     color: rgb(0, 0, 0);
     font-size: 30px;

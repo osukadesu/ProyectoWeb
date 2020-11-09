@@ -1,7 +1,7 @@
 export class Habitacion {
-    idhabitacion: string;
+    idHabitacion: string;
     tipo: string;
-    npersonas: number;
+    nPersonas: number;
     estado: string;
     precio: number;
 }

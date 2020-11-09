@@ -18,6 +18,9 @@ import { HabitacionGestionComponent } from './hotel/habitacion/habitacion-gestio
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegistroLoginComponent } from './login/registro-login/registro-login.component';
+import { ReservaRegistroComponent } from './hotel/reserva/reserva-registro/reserva-registro.component';
+import { ReservaConsultaComponent } from './hotel/reserva/reserva-consulta/reserva-consulta.component';
+import { ReservaGestionComponent } from './hotel/reserva/reserva-gestion/reserva-gestion.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -27,9 +30,9 @@ const routes: Routes = [
   { path: 'empleadoregistro', component: EmpleadoRegistroComponent},
   { path: 'empleadoconsulta', component: EmpleadoConsultaComponent },
   { path: 'empleadogestion', component: EmpleadoGestionComponent },
-  { path: 'facturaregistro', component: FacturaRegistroComponent},
-  { path: 'facturaconsulta', component: FacturaConsultaComponent },
-  { path: 'facturagestion', component: FacturaGestionComponent },
+  { path: 'reservaregistro', component: ReservaRegistroComponent},
+  { path: 'reservaconsulta', component: ReservaConsultaComponent },
+  { path: 'reservagestion', component: ReservaGestionComponent },
   { path: 'habitacionregistro', component: HabitacionRegistroComponent},
   { path: 'habitacionconsulta', component: HabitacionConsultaComponent },
   { path: 'habitaciongestion', component: HabitacionGestionComponent },

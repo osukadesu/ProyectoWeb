@@ -1,32 +1,33 @@
-<p>reserva-gestion works!</p>
 <title>GESTION FACTURA</title>
 <br> <br>
-<div align="center"><img src="assets/factura.png" alt="Logo"><h1 style="color: rgb(255, 255, 255)">GESTION RESERVA</h1></div>
+<h1>HOLAA</h1>
 <br>
-<header>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-</header>
-<br>
-<div class="frame">
-    <button class="custom-btn btn-12">
-        <span>
-            <div>
-                <a style="color: rgb(255, 255, 255)" class="nav-link" [routerLink]='["/reservaregistro"]'>RESERVAR HABITACION</a>
-            </div>
-        </span>
-        <span>
-            <div align="center"><img src="assets/registrar.png" alt="Logo"> </div>
-        </span>
-    </button>
-    <button class="custom-btn btn-12">
-        <span>
-            <div>
-                <a style="color: rgb(255, 255, 255)" class="nav-link" [routerLink]='["/reservaconsulta"]'>CONSULTAR Reserva</a>
-            </div>
-        </span>
-        <span>
-            <div align="center"><img src="assets/consultar.png" alt="Logo"> </div>
-        </span>
-    </button>
+<!-- Card -->
+<div style="width: 20%; left: 10%;" class="card" *ngFor="let habitacion of habitaciones">
+
+    <!-- Card image -->
+    <img src="assets/Hotel.png" style="width: 25%; " alt="Logo">
+
+    <!-- Card content -->
+    <div class="card-body">
+
+        <!-- Title -->
+        <h3 class="card-title"><a>Habitacion: # {{habitacion.idHabitacion}}</a></h3>
+
+        <h3 class="card-title"><a>Tipo de habitacion: {{habitacion.tipo}}</a></h3>
+
+        <h3 class="card-title"><a>Numero de personas: {{habitacion.nPersonas}}</a></h3>
+
+        <h3 class="card-title"><a>Precio: {{habitacion.precio}}</a></h3>
+        <!-- Text -->
+        <!-- Button -->
+        <a href="#" class="btn btn-primary">Reservar</a>
+
+    </div>
+
 </div>
-<br><br>
+<!-- Card -->
+
+
+
+<br><br><br><br><br><br><br>
