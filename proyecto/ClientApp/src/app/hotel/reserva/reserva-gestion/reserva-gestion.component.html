@@ -1,18 +1,19 @@
-<title>GESTION FACTURA</title>
+<title>GESTION RESERVA</title>
 <br> <br>
-<h1>HOLAA</h1>
+<h1>Reservas</h1>
 <br>
 <!-- Card -->
-<div style="width: 20%; left: 10%;" class="card" *ngFor="let habitacion of habitaciones">
-
+<div style="width: 30%; left: 10%;" class="card" *ngFor="let habitacion of habitaciones">
+    
+    <h3 class="card-title"><a>Habitacion: # {{habitacion.idHabitacion}}</a></h3>
     <!-- Card image -->
-    <img src="assets/Hotel.png" style="width: 25%; " alt="Logo">
+    <img src="assets/Hotel.png" style="width: 30%; " alt="Logo">
 
     <!-- Card content -->
     <div class="card-body">
 
         <!-- Title -->
-        <h3 class="card-title"><a>Habitacion: # {{habitacion.idHabitacion}}</a></h3>
+       
 
         <h3 class="card-title"><a>Tipo de habitacion: {{habitacion.tipo}}</a></h3>
 
@@ -21,7 +22,7 @@
         <h3 class="card-title"><a>Precio: {{habitacion.precio}}</a></h3>
         <!-- Text -->
         <!-- Button -->
-        <a href="#" class="btn btn-primary">Reservar</a>
+        <button id="divcontainer1" type="button" style="color: rgb(0, 0, 0)"class="btn blue-gradient" >Reservar</button>
 
     </div>
 

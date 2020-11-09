@@ -65,6 +65,16 @@ p{
 
 }
 
+#divcontainer1 {
+  border-radius: 25px;
+  font-size: 30px;
+  width: 95%;
+  height: 60px;
+  position: relative;
+  right: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 body {
     background: #e0e5ec;
   }
@@ -72,16 +82,14 @@ body {
   h1 {
     position: relative;
     text-align: center;
-    color: #353535;
+    color: #000000;
     font-size: 48px;
     font-family: "Cormorant Garamond", serif;
   }
   
   h3 {
-    position: relative;
-    text-align: center;
     color: #000000;
-    font-size: 20px;
+    font-size: 5%;
     font-family: "Cormorant Garamond", serif;
   }
   
