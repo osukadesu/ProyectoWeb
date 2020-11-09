@@ -1,8 +1,6 @@
 
 
   h1 {
-    font-size: 30px;
-    font-family: Serif;
     text-align: center;
     color: #000000;
   }
@@ -23,8 +21,7 @@
   input[type="submit"] {
     padding: 0.5% 4%;
     cursor: pointer;
-    font-size: 30px;
-    font-family: Serif;
+    
     color: #ffffff;
     background-color: #10eaf0;
     text-align: center;
@@ -53,7 +50,6 @@
   
   #divcontainer2 {
     border-radius: 25px;
-    font-size: 30px;
     width: 98%;
     height: 60px;
     position: relative;
@@ -64,7 +60,7 @@
 
   #divcontainer3 {
     border-radius: 25px;
-    font-size: 30px;
+ 
     width: 30%;
     height: 60px;
     position: relative;
@@ -74,8 +70,7 @@
   }
 
   form {
-    font-size: 30px;
-    font-family: Serif;
+    
     text-align: left;
     color: #ffffff;
   }

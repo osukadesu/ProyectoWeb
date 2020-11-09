@@ -9,26 +9,26 @@
     position: relative;
     top: -51px;
     left: 110%;
-    font-size: 155%;
+    : 155%;
     width: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
   input[type="search"] {
-    font-size: 135%;
+    : 135%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
   a {
-    font-size: 25px;
-    font-family: Serif;
+    : 25px;
+    
     text-align: center;
     color: #ffffff;
   }
   
   h1 {
-    font-size: 30px;
-    font-family: Serif;
+    : 30px;
+    
     text-align: center;
     color: #000000;
   }
@@ -40,7 +40,7 @@
 
   #divcontainer2 {
     border-radius: 25px;
-    font-size: 30px;
+    : 30px;
     width: 98%;
     height: 60px;
     position: relative;
@@ -74,7 +74,7 @@
     border-collapse: collapse;
     position: relative;
     top: 8px;
-    font-size: 25px;
+    : 25px;
   }
   
   li {
@@ -82,8 +82,8 @@
   }
   
   #Contenedor1 {
-    font-size: 25px;
-    font-family: Serif;
+    : 25px;
+    
     color: #24009c;
     position: relative;
     left: 73.3%;
@@ -104,8 +104,8 @@
     position: relative;
     left: 4%;
     top: -2px;
-    font-size: 25px;
-    font-family: Serif;
+    : 25px;
+    
     color: #ffffff;
     background-color: #007bff;
     text-align: center;

@@ -1,36 +1,42 @@
 <title>GESTION RESERVA</title>
 <br> <br>
 <h1>Reservas</h1>
-<br>
+<br><br>
 <!-- Card -->
-<div id="cardr" style="width: 30%; left: 10%; background-color:rgba(0, 255, 255, 0.473);" class="card" *ngFor="let habitacion of habitaciones">
-    <div align="center">
+<div class="card-deck">
+    <div class="row">
+        <div id="cardr" style="left: 5%; background-color:rgba(0, 255, 221, 0.384);" class="card"
+            *ngFor="let habitacion of habitaciones ">
 
-        <h3 class="card-title">Habitacion: #{{habitacion.idHabitacion}}</h3>
+            <!-- Card image -->
+            <div align="center"><img class="card-img-top" src="assets/Hotel2.jpg" alt="Card image cap"></div>
+
+            <div align="center">
+
+                <h3 class="card-title">Habitacion: #{{habitacion.idHabitacion}}</h3>
+            </div>
+
+
+            <!-- Card content -->
+            <div class="card-body">
+
+                <h3 class="card-title">Tipo de habitacion: {{habitacion.tipo}}</h3>
+
+                <h3 class="card-title">Numero de personas: {{habitacion.nPersonas}}</h3>
+
+                <h3 class="card-title">Precio: {{habitacion.precio}}</h3>
+
+            </div>
+            <div class="card-footer">
+                <button [routerLink]='["/reservaregistro"]' type="button"
+                class="btn btn-grad btn-lg btn-block">
+                <h2>
+                    Reservar 
+                </h2>
+            </button>
+              </div>
+           
+        </div>
     </div>
-    <!-- Card image -->
-    <div align="center"><img src="assets/Hotel.png" style="width: 30%; " alt="Logo"></div>
-
-    <!-- Card content -->
-    <div class="card-body">
-
-        <h3 class="card-title">Tipo de habitacion: {{habitacion.tipo}}</h3>
-
-        <h3 class="card-title">Numero de personas: {{habitacion.nPersonas}}</h3>
-
-        <h3 class="card-title">Precio:{{habitacion.precio}}</h3>
-
-    </div>
-    <button id="divcontainer1" type="button" style="
-    background-image: linear-gradient(to bottom, #007bff, #674eac, #5c2c62, #36182b, #000000);
-    " class="btn btn-lg btn-block">
-        <h2>
-            Reservar
-        </h2></button>
-
 </div>
-<!-- Card -->
-
-
-
-<br><br><br><br><br><br><br>
+<br><br>

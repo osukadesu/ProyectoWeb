@@ -9,26 +9,20 @@ button[type="submit"] {
   position: relative;
   top: -51px;
   left: 110%;
-  font-size: 155%;
   width: 50%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 input[type="text"] {
-  font-size: 135%;
   border-radius: 25px;
 }
 
 a {
-  font-size: 25px;
-  font-family: Serif;
   text-align: center;
   color: #ffffff;
 }
 
 h1 {
-  font-size: 30px;
-  font-family: Serif;
   text-align: center;
   color: #000000;
 }
@@ -39,7 +33,6 @@ th {
 
 #divcontainer2 {
   border-radius: 25px;
-  font-size: 30px;
   width: 98%;
   height: 60px;
   margin-bottom: 1%;
@@ -69,7 +62,6 @@ table {
   border-collapse: collapse;
   position: relative;
   top: 8px;
-  font-size: 20px;
 }
 
 li {
@@ -77,8 +69,6 @@ li {
 }
 
 #Contenedor1 {
-  font-size: 25px;
-  font-family: Serif;
   color: #24009c;
   position: relative;
   left: 73.3%;
@@ -99,8 +89,6 @@ select {
   position: relative;
   left: 4%;
   top: -2px;
-  font-size: 25px;
-  font-family: Serif;
   color: #ffffff;
   background-color: #007bff;
   text-align: center;

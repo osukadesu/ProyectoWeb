@@ -3,8 +3,7 @@
 }
 
 a {
-  font-size: 25px;
-  font-family: Serif;
+  : 25px;
   color: #ffffff;
 }
 
@@ -17,22 +16,19 @@ a {
 }
 
 h1 {
-  font-size: 30px;
-  font-family: Serif;
+  : 30px;
   text-align: center;
   color: #000000;
 }
 
 h2 {
-  font-size: 30px;
-  font-family: Serif;
+  : 30px;
   text-align: center;
   color: #ffffff;
 }
 
 p {
-  font-size: 30px;
-  font-family: Serif;
+  : 30px;
   text-align: justify;
   color: #ffffff;
 }

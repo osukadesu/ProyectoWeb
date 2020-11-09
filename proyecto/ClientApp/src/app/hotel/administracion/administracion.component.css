@@ -6,13 +6,10 @@ body {
     position: relative;
     text-align: center;
     color: #353535;
-    font-size: 48px;
-    font-family: "Cormorant Garamond", serif;
   }
   
   a {
     color: rgb(255, 255, 255);
-    font-size: 30px;
   }
 
   .frame {
@@ -29,7 +26,6 @@ body {
     color: #fff;
     border-radius: 5px;
     padding: 10px 10px;
-    font-family: 'Lato', sans-serif;
     font-weight: 500;
     background: transparent;
     cursor: pointer;

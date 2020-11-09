@@ -11,7 +11,7 @@
   
   #divcontainer1 {
     border-radius: 25px;
-    font-size: 30px;
+    : 30px;
     width: 95%;
     height: 60px;
     position: relative;
@@ -21,7 +21,7 @@
   
   #divcontainer2 {
     border-radius: 25px;
-    font-size: 30px;
+    : 30px;
     width: 98%;
     height: 60px;
     position: relative;
