@@ -31,6 +31,11 @@ import { FiltroHabitacionPipe } from './pipe/filtro-habitacion.pipe';
 import { HabitacionRegistroComponent } from './hotel/habitacion/habitacion-registro/habitacion-registro.component';
 import { HabitacionConsultaComponent } from './hotel/habitacion/habitacion-consulta/habitacion-consulta.component';
 import { HabitacionGestionComponent } from './hotel/habitacion/habitacion-gestion/habitacion-gestion.component';
+import { Cliente2RegistroComponent } from './clienteweb/cliente2-registro/cliente2-registro.component';
+import { Cliente2ConsultaComponent } from './clienteweb/cliente2-consulta/cliente2-consulta.component';
+import { ReservaRegistroComponent } from './hotel/reserva/reserva-registro/reserva-registro.component';
+import { ReservaGestionComponent } from './hotel/reserva/reserva-gestion/reserva-gestion.component';
+import { ReservaConsultaComponent } from './hotel/reserva/reserva-consulta/reserva-consulta.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +64,11 @@ import { HabitacionGestionComponent } from './hotel/habitacion/habitacion-gestio
     HabitacionRegistroComponent,
     HabitacionConsultaComponent,
     HabitacionGestionComponent,
+    Cliente2RegistroComponent,
+    Cliente2ConsultaComponent,
+    ReservaRegistroComponent,
+    ReservaGestionComponent,
+    ReservaConsultaComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -30,10 +30,8 @@ export class ClienteRegistroComponent implements OnInit {
     this.cliente.email = '';
     this.cliente.edad;
     this.cliente.telefono;
-    this.cliente.ppal;
 
     this.formregistro = this.formBuilder.group({
-      ppal: [this.cliente.ppal, [Validators.required, Validators.maxLength(12), this.ValidaCedula]],
       cedula: [this.cliente.cedula, [Validators.required, Validators.maxLength(12), this.ValidaCedula]],
       nombre: [this.cliente.nombre, Validators.required],
       apellido: [this.cliente.apellido, Validators.required],
@@ -84,46 +82,4 @@ export class ClienteRegistroComponent implements OnInit {
       }
     });
   }
-
-  private ValidaCedula2(control2: AbstractControl) {
-    const cantidad = control2.value;
-    if (cantidad <= 0 || cantidad >= 999999999999) {
-      return { validCantidad: true, messageCantidad: 'Cantidad menor o igual a 0' };
-    }
-    return null;
-  }
-
-
-
-  private ValidaSexo2(control2: AbstractControl) {
-    const sexo = control2.value;
-    if (sexo.toLocaleUpperCase() !== 'MASCULINO' && sexo.toLocaleUpperCase() !== 'FEMENINO') {
-      return { validSexo: true, messageSexo: 'Sexo No Valido' };
-    }
-    return null;
-  }
-
-  get control2() {
-    return this.formregistro.controls;
-  }
-
-  onSubmit2() {
-    if (this.formregistro2.invalid) {
-      return;
-    }
-    this.add2();
-  }
-
-  add2() {
-    this.cliente = this.formregistro2.value;
-    this.clienteService.post(this.cliente).subscribe(p => {
-      if (p != null) {
-        const messageBox = this.modalService.open(AlertModalComponent)
-        messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.cuerpo = 'Info: Se ha agregado un cliente';
-        this.cliente = p;
-      }
-    });
-  }
-
 }

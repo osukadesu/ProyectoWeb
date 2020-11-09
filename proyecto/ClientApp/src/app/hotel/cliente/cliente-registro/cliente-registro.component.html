@@ -19,7 +19,7 @@
             <label>Nombre</label>
             <input type="text" id="nombre" name="nombre"
                 [ngClass]="{'is-invalid': control.nombre.errors && control.nombre.touched}"
-                formControlName="nombre" placeholder="Primer Nombre">
+                formControlName="nombre" placeholder="Nombre">
             <div *ngIf="control.nombre.errors" class="invalid-feedback">
                 <div *ngIf="control.nombre.errors.required">Se requiere el nombre</div>
             </div>
@@ -29,7 +29,7 @@
             <label>Apellido</label>
             <input type="text" id="apellido" name="apellido"
                 [ngClass]="{'is-invalid': control.apellido.errors && control.apellido.touched}"
-                formControlName="apellido" placeholder="Primer Apellido">
+                formControlName="apellido" placeholder="Apellido">
             <div *ngIf="control.apellido.errors" class="invalid-feedback">
                 <div *ngIf="control.apellido.errors.required">Se requiere el apellido</div>
             </div>
@@ -55,8 +55,6 @@
                 placeholder="Edad">
             <div *ngIf="control.edad.errors" class="invalid-feedback">
                 <div *ngIf="control.edad.errors.required">Se requiere la edad</div>
-                <div *ngIf="control.edad.errors.maxlength">Caracteres mayores a 60 </div>
-                <div *ngIf="control.edad.errors.min">Caracteres menores que 18 </div>
             </div>
         </div>
 
