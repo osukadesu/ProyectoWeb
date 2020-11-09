@@ -29,7 +29,7 @@ h2{
 
     text-align: center;
 
-    color: #ffffff;
+    color: #000000;
 
 }
 
@@ -66,12 +66,8 @@ p{
 }
 
 #divcontainer1 {
-  border-radius: 25px;
-  font-size: 30px;
-  width: 95%;
-  height: 60px;
+  height: 70px;
   position: relative;
-  right: 2%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -93,6 +89,10 @@ body {
     font-family: "Cormorant Garamond", serif;
   }
   
+#cardr
+{
+  border-radius: 20px;
+}
 
   a {
     color: rgb(0, 0, 0);
@@ -197,4 +197,6 @@ body {
     -moz-transform: rotateX(-90deg);
     transform: rotateX(-90deg);
   }
+  
+
   

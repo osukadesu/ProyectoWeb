@@ -3,7 +3,7 @@
 <h1>Reservas</h1>
 <br>
 <!-- Card -->
-<div style="width: 30%; left: 10%; background-color:rgba(0, 255, 255, 0.267);" class="card" *ngFor="let habitacion of habitaciones">
+<div id="cardr" style="width: 30%; left: 10%; background-color:rgba(0, 255, 255, 0.473);" class="card" *ngFor="let habitacion of habitaciones">
     <div align="center">
 
         <h3 class="card-title">Habitacion: #{{habitacion.idHabitacion}}</h3>
@@ -14,19 +14,19 @@
     <!-- Card content -->
     <div class="card-body">
 
-        <!-- Title -->
-       
-
         <h3 class="card-title">Tipo de habitacion: {{habitacion.tipo}}</h3>
 
         <h3 class="card-title">Numero de personas: {{habitacion.nPersonas}}</h3>
 
         <h3 class="card-title">Precio:{{habitacion.precio}}</h3>
-        <!-- Text -->
-        <!-- Button -->
-        <button id="divcontainer1" type="button" style="color: rgb(0, 0, 0)"class="btn aqua-gradient" >Reservar</button>
 
     </div>
+    <button id="divcontainer1" type="button" style="
+    background-image: linear-gradient(to bottom, #007bff, #674eac, #5c2c62, #36182b, #000000);
+    " class="btn btn-lg btn-block">
+        <h2>
+            Reservar
+        </h2></button>
 
 </div>
 <!-- Card -->
