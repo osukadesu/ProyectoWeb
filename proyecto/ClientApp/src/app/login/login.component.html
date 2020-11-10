@@ -13,19 +13,24 @@
       <label for="tuser"><b>TIPO DE USUARIO</b></label>
       <select class="browser-default custom-select custom-select-lg mb-3">
         <option value="seleccionar">Seleccionar</option>
+        <option value="cliente">Administrador</option>
         <option value="recepcionista">Recepcionista</option>
         <option value="cliente">Cliente</option>
       </select>
       <label for="psw"><b>CONTRASEÑA</b></label>
       <input type="password" placeholder="INGRESAR CONTRASEÑA" name="contraseña" required>
       <br><br>
-      <button id="divcontainer2" type="button" style="color: rgb(0, 0, 0)" onclick="location.href='https://localhost:5001/administracion'"
-      class="btn aqua-gradient">Iniciar Sesion</button>
+      <button id="divcontainer2" type="button" style="color: rgb(0, 0, 0)" [routerLink]='["/administracion"]'
+      class="border border-success">Iniciar Sesion</button>
       <br>
     </div>
   </form>
   <br>
-  <button id="divcontainer1" type="button" style="color: rgb(0, 0, 0)" [routerLink]='["/registro"]' class="btn blue-gradient" >Registrarme</button>
-  <br><br>
+  <div align="center">
+    No tienes una cuenta? registrate!
+  </div>
+  <button id="divcontainer1" type="button" style="color: rgb(0, 0, 0)" [routerLink]='["/registro"]' class="border border-primary" >Registrarme</button>
+  <br>
+  <br>
 </div>
 <br>

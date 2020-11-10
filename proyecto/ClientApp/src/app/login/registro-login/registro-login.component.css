@@ -1,6 +1,5 @@
 
 #form {
-  background-image: linear-gradient(to bottom, #007bff, #7f98ff, #b4b8ff, #dddaff, #ffffff);
   border-radius: 25px;
   width: 50%;
   height: 50%;
@@ -11,7 +10,6 @@
   
   #divcontainer1 {
     border-radius: 25px;
-    : 30px;
     width: 95%;
     height: 60px;
     position: relative;
@@ -20,8 +18,6 @@
   }
   
   #divcontainer2 {
-    border-radius: 25px;
-    : 30px;
     width: 98%;
     height: 60px;
     position: relative;

@@ -5,11 +5,11 @@
 <!-- Card -->
 <div class="card-deck">
     <div class="row">
-        <div id="cardr" style="left: 5%; background-color:rgba(0, 255, 221, 0.384);" class="card"
+        <div id="cardr" style="left: 5%; background-color:#1687ff93;" class="card"
             *ngFor="let habitacion of habitaciones ">
 
             <!-- Card image -->
-            <div align="center"><img class="card-img-top" src="assets/Hotel2.jpg" alt="Card image cap"></div>
+            <div align="center"><img class="card-img-top" style="border-radius: 20px;" src="assets/Hotel2.jpg" alt="Card image cap"></div>
 
             <div align="center">
 
@@ -30,7 +30,7 @@
 
             </div>
             <div class="card-footer">
-                <button [routerLink]='["/reservaregistro"]' type="button" class="btn btn-grad btn-lg btn-block">
+                <button style=" position: relative; left: -6%;" [routerLink]='["/reservaregistro"]' type="button" class="border border-primary btn-lg btn-block">
                     <h2>
                         Reservar
                     </h2>

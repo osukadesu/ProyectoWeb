@@ -40,9 +40,7 @@ th {
 }
 
 #rcorners1 {
-  border: 2px solid #ffffff;
   border-radius: 25px;
-  background-image: linear-gradient(to bottom, #007bff, #7f98ff, #b4b8ff, #dddaff, #ffffff);
   padding: 20px;
   width: 98%;
   position: relative;

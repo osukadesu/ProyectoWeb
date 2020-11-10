@@ -1,7 +1,4 @@
 a{
-    : 25px;
-
-    
 
     text-align: center;
 
@@ -9,10 +6,6 @@ a{
 }
 
 h1{
-
-    : 30px;
-
-    
 
     text-align: center;
 
@@ -22,11 +15,6 @@ h1{
 
 
 h2{
-
-    : 30px;
-
-    
-
     text-align: center;
 
     color: #ffffff;
@@ -37,10 +25,6 @@ p{
 
     text-align: center;
     
-    : 30px;
-
-    
-
     text-align: justify;
 
     color: #ffffff;
@@ -73,13 +57,10 @@ body {
     position: relative;
     text-align: center;
     color: #353535;
-    : 48px;
-    font-family: "Cormorant Garamond", serif;
   }
   
   a {
     color: rgb(0, 0, 0);
-    : 30px;
   }
 
   .frame {

@@ -13,9 +13,8 @@
       <label for="psw"><b>CONTRASEÑA</b></label>
       <input type="password" placeholder="INGRESAR CONTRASEÑA" name="contraseña" required>
       <br><br>
-      <button id="divcontainer2" type="button" style="color: rgb(0, 0, 0)" onclick="location.href='https://localhost:5001/registro'"
-      class="btn aqua-gradient">Registrarme</button>
-      <br>
+      <button id="divcontainer2" type="button" style="color: rgb(0, 0, 0)" [routerLink]='["/login"]'
+      class="border border-success">Registrarme</button>
     </div>
   </form>
   <br><br>

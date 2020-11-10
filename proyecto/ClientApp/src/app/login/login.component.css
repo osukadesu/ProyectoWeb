@@ -1,6 +1,5 @@
 
 #form {
-background-image: linear-gradient(to bottom, #007bff, #7f98ff, #b4b8ff, #dddaff, #ffffff);
 border-radius: 25px;
 width: 50%;
 height: 50%;
@@ -10,9 +9,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #divcontainer1 {
-  border-radius: 25px;
-  : 30px;
-  width: 95%;
+  width: 94%;
   height: 60px;
   position: relative;
   left: 3%;
@@ -20,8 +17,6 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #divcontainer2 {
-  border-radius: 25px;
-  : 30px;
   width: 98%;
   height: 60px;
   position: relative;

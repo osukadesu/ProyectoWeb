@@ -10,25 +10,21 @@
     position: relative;
     top: -51px;
     left: 110%;
-    : 155%;
     width: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
   input[type="search"] {
-    : 135%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
   a {
-    : 25px;
     
     text-align: center;
     color: #ffffff;
   }
   
   h1 {
-    : 30px;
     
     text-align: center;
     color: #000000;
@@ -41,7 +37,6 @@
 
   #divcontainer2 {
     border-radius: 25px;
-    : 30px;
     width: 98%;
     height: 60px;
     position: relative;
@@ -53,9 +48,7 @@
 
   
   #rcorners1 {
-    border: 2px solid #ffffff;
     border-radius: 25px;
-    background: #007bff;
     padding: 20px;
     width: 98%;
     position: relative;
@@ -75,7 +68,6 @@
     border-collapse: collapse;
     position: relative;
     top: 8px;
-    : 25px;
   }
   
   li {
@@ -83,7 +75,6 @@
   }
   
   #Contenedor1 {
-    : 25px;
     
     color: #24009c;
     position: relative;
@@ -105,7 +96,6 @@
     position: relative;
     left: 4%;
     top: -2px;
-    : 25px;
     
     color: #ffffff;
     background-color: #007bff;

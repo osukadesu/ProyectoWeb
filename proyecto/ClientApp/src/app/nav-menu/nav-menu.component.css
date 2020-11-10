@@ -1,9 +1,9 @@
 #navcont {
   height: 80px;
+  background-color: #1687ff;
 }
 
 a {
-  : 25px;
   color: #ffffff;
 }
 
@@ -16,19 +16,16 @@ a {
 }
 
 h1 {
-  : 30px;
   text-align: center;
-  color: #000000;
+  color: #ffffff;
 }
 
 h2 {
-  : 30px;
   text-align: center;
   color: #ffffff;
 }
 
 p {
-  : 30px;
   text-align: justify;
   color: #ffffff;
 }
