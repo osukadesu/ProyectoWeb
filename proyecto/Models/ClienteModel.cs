@@ -15,6 +15,7 @@ namespace ClienteModel
         {
             Cedula = cliente.Cedula;
             Nombre = cliente.Nombre;
+            Apellido = cliente.Apellido;
             Edad = cliente.Edad;
             Sexo = cliente.Sexo;
             Email = cliente.Email;

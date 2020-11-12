@@ -15,18 +15,14 @@
             <tr class="thead-dark">
                 <th (click)="sortTable(0)" scope="col">#</th>
                 <th (click)="sortTable(1)">Cedula >> </th>
-                <th (click)="sortTable(2)">Primer Nombre >></th>
-                <th (click)="sortTable(3)">Segundo Nombre >></th>
-                <th (click)="sortTable(4)">Primer Apellido >></th>
-                <th (click)="sortTable(5)">Segundo Apellido >></th>
+                <th (click)="sortTable(2)">Nombre >></th>
+                <th (click)="sortTable(5)">Apellido >></th>
                 <th (click)="sortTable(6)">Edad >></th>
                 <th (click)="sortTable(7)">Sexo >></th>
                 <th (click)="sortTable(8)">Telefono>></th>
                 <th (click)="sortTable(10)">Jornada>></th>
                 <th (click)="sortTable(11)">Cargo>></th>
                 <th (click)="sortTable(12)">Cedula Jefe>></th>
-                <th (click)="sortTable(13)">Departamento>></th>
-                <th (click)="sortTable(14)">Ciudad>></th>
                
             </tr>
         </thead>
@@ -34,18 +30,14 @@
             <tr *ngFor="let empleado of empleados|filtroEmpleado:searchText; index as i ">
                 <td scope="row">{{ i + 1 }}</td>
                 <td>{{ empleado.cedula}} </td>
-                <td>{{ empleado.primerNombre }}</td>
-                <td>{{ empleado.segundoNombre }}</td>
-                <td>{{ empleado.primerApellido }}</td>
-                <td>{{ empleado.segundoApellido }}</td>
+                <td>{{ empleado.nombre }}</td>
+                <td>{{ empleado.apellido }}</td>
                 <td>{{ empleado.edad}}</td>
                 <td>{{ empleado.sexo}}</td>
                 <td>{{ empleado.telefono}}</td>
                 <td>{{ empleado.jornada}}</td>
                 <td>{{ empleado.cargo}}</td>
                 <td>{{ empleado.jefe}}</td>
-                <td>{{ empleado.departamento}}</td>
-                <td>{{ empleado.ciudad}}</td>
                 <!--
                     <td> <a routerLink='/personaEdicion/{{cliente.cedula}}'>Modificar</a> <button id="divcontainer2" class="btn btn-primary">Eliminar</button></td>
                 -->

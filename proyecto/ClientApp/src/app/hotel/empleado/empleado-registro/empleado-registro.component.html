@@ -16,47 +16,27 @@
             </div>
         </div>
 
-        <div >
-            <label>Primer Nombre</label>
-            <input type="text" id="primerNombre" name="primerNombre"
-                [ngClass]="{'is-invalid': control.primerNombre.errors && control.primerNombre.touched}"
-                formControlName="primerNombre" placeholder="Primer Nombre">
-            <div *ngIf="control.primerNombre.errors" class="invalid-feedback">
-                <div *ngIf="control.primerNombre.errors.required">Se requiere el primer nombre</div>
-            </div>
-        </div >
-
-        <div >
-            <label>Segundo Nombre</label>
-            <input type="text" id="segundoNombre" name="segundoNombre"
-                [ngClass]="{'is-invalid': control.segundoNombre.errors && control.segundoNombre.touched}"
-                formControlName="segundoNombre" placeholder="Segundo Nombre">
-            <div *ngIf="control.segundoNombre.errors" class="invalid-feedback">
-                <div *ngIf="control.segundoNombre.errors.required">Se requiere el segundo nombre</div>
-            </div>
-        </div>
-
-        <div >
-            <label>Primer Apellido</label>
-            <input type="text" id="primerApellido" name="primerApellido"
-                [ngClass]="{'is-invalid': control.primerApellido.errors && control.primerApellido.touched}"
-                formControlName="primerApellido" placeholder="Primer Apellido">
-            <div *ngIf="control.primerApellido.errors" class="invalid-feedback">
-                <div *ngIf="control.primerApellido.errors.required">Se requiere el primer apellido</div>
+        <div>
+            <label>Nombre</label>
+            <input type="text" id="nombre" name="nombre"
+                [ngClass]="{'is-invalid': control.nombre.errors && control.nombre.touched}" formControlName="nombre"
+                placeholder="Nombre">
+            <div *ngIf="control.nombre.errors" class="invalid-feedback">
+                <div *ngIf="control.nombre.errors.required">Se requiere el nombre</div>
             </div>
         </div>
 
         <div>
-            <label>Segundo Apellido</label>
-            <input type="text" id="segundoApellido" name="segundoApellido"
-                [ngClass]="{'is-invalid': control.segundoApellido.errors && control.segundoApellido.touched}"
-                formControlName="segundoApellido" placeholder="Segundo Apellido">
-            <div *ngIf="control.segundoApellido.errors" class="invalid-feedback">
-                <div *ngIf="control.segundoApellido.errors.required">Se requiere el segundo apellido</div>
+            <label>Apellido</label>
+            <input type="text" id="apellido" name="apellido"
+                [ngClass]="{'is-invalid': control.apellido.errors && control.apellido.touched}"
+                formControlName="apellido" placeholder="Apellido">
+            <div *ngIf="control.apellido.errors" class="invalid-feedback">
+                <div *ngIf="control.apellido.errors.required">Se requiere el apellido</div>
             </div>
         </div>
 
-        <div >
+        <div>
             <label>Sexo</label>
             <select id="sexo" name="sexo" formControlName="sexo"
                 [ngClass]="{'is-invalid': control.sexo.errors && control.sexo.touched}">
@@ -69,7 +49,7 @@
             </div>
         </div>
 
-        <div >
+        <div>
             <label>Edad</label><br>
             <input type="number" id="edad" name="edad"
                 [ngClass]="{'is-invalid': control.edad.errors && control.edad.touched}" formControlName="edad"
@@ -81,7 +61,7 @@
             </div>
         </div>
 
-        <div >
+        <div>
             <label>Telefono</label><br>
             <input type="number" id="telefono" name="telefono"
                 [ngClass]="{'is-invalid': control.telefono.errors && control.telefono.touched}"
@@ -91,7 +71,7 @@
             </div>
         </div>
 
-        <div >
+        <div>
             <label>Cargo</label>
             <select id="cargo" name="cargo" [ngClass]="{'is-invalid': control.cargo.errors && control.cargo.touched}"
                 formControlName="cargo">
@@ -108,7 +88,7 @@
             </div>
         </div>
 
-        <div >
+        <div>
             <label>Jornada</label>
             <select id="jornada" name="jornada"
                 [ngClass]="{'is-invalid': control.jornada.errors && control.jornada.touched}" formControlName="jornada">
@@ -121,33 +101,13 @@
             </div>
         </div>
 
-        <div >
+        <div>
             <label>Jefe</label>
             <input type="text" id="jefe" name="jefe"
-            [ngClass]="{'is-invalid': control.jefe.errors && control.jefe.touched}"
-            formControlName="jefe" placeholder="jefe">
-        <div *ngIf="control.jefe.errors" class="invalid-feedback">
-            <div *ngIf="control.jefe.errors.required">Se requiere el jefe</div>
-        </div>
-        </div>
-
-        <div >
-            <label>Departamento</label>
-            <input type="text" id="departamento" name="departamento"
-                [ngClass]="{'is-invalid': control.departamento.errors && control.departamento.touched}"
-                formControlName="departamento" placeholder="Departamento">
-            <div *ngIf="control.departamento.errors" class="invalid-feedback">
-                <div *ngIf="control.departamento.errors.required">Se requiere el departamento</div>
-            </div>
-        </div>
-
-        <div >
-            <label>Ciudad</label>
-            <input type="text" id="ciudad" name="ciudad"
-                [ngClass]="{'is-invalid': control.ciudad.errors && control.ciudad.touched}" formControlName="ciudad"
-                placeholder="Ciudad">
-            <div *ngIf="control.ciudad.errors" class="invalid-feedback">
-                <div *ngIf="control.ciudad.errors.required">Se requiere la ciudad</div>
+                [ngClass]="{'is-invalid': control.jefe.errors && control.jefe.touched}" formControlName="jefe"
+                placeholder="jefe">
+            <div *ngIf="control.jefe.errors" class="invalid-feedback">
+                <div *ngIf="control.jefe.errors.required">Se requiere el jefe</div>
             </div>
         </div>
     </form>
