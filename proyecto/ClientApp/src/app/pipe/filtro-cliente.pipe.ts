@@ -12,5 +12,4 @@ export class FiltroClientePipe implements PipeTransform {
       p.cedula.toLowerCase()
         .indexOf(searchText.toLowerCase()) !== -1);
   }
-
 }

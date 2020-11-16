@@ -12,7 +12,6 @@ import { Cliente } from '../../models/cliente';
 })
 export class ClienteRegistroComponent implements OnInit {
   formregistro: FormGroup;
-  formregistro2: FormGroup;
   cliente: Cliente;
   constructor(private clienteService: ClienteService, private formBuilder: FormBuilder,
     private modalService: NgbModal) { }

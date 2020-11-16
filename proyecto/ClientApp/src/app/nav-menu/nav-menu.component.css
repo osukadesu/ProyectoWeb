@@ -3,8 +3,16 @@
   background-color: #3f96f3;
 }
 
-a {
+a{
   color: #ffffff;
+}
+
+a :hover{
+  color: #34b5ff;
+}
+
+a ::after{
+  color: #3f96f3;
 }
 
 #div02{
