@@ -44,7 +44,7 @@ namespace Datos.Migrations
             modelBuilder.Entity("Entity.Persona", b =>
                 {
                     b.Property<string>("Cedula")
-                        .HasColumnType("varchar(12)");
+                        .HasColumnType("varchar(4)");
 
                     b.Property<string>("Apellido")
                         .HasColumnType("varchar(12)");
@@ -84,7 +84,7 @@ namespace Datos.Migrations
                         .HasColumnType("varchar(4)");
 
                     b.Property<string>("Cedula")
-                        .HasColumnType("varchar(12)");
+                        .HasColumnType("varchar(4)");
 
                     b.Property<DateTime>("FechaEntrada")
                         .HasColumnType("datetime");
@@ -124,7 +124,7 @@ namespace Datos.Migrations
                         .HasColumnType("varchar(4)");
 
                     b.Property<string>("Ppal")
-                        .HasColumnType("varchar(12)");
+                        .HasColumnType("varchar(4)");
 
                     b.HasIndex("IdHabitacion");
 
@@ -144,7 +144,7 @@ namespace Datos.Migrations
                         .HasColumnType("varchar(4)");
 
                     b.Property<string>("Jefe")
-                        .HasColumnType("varchar(12)");
+                        .HasColumnType("varchar(4)");
 
                     b.Property<string>("Jornada")
                         .HasColumnType("varchar(8)");

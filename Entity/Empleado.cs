@@ -14,7 +14,7 @@ namespace Entity
         [Column(TypeName = "varchar(8)")]
         public string Jornada { get; set; }
 
-        [Column(TypeName = "varchar(12)")]
+        [Column(TypeName = "varchar(4)")]
         public string Jefe { get; set; }
     }
 }

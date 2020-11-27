@@ -1,4 +1,4 @@
-<nav id="navcont" class=" primary-color navbar navbar-expand-sm">
+<nav id="navcont" style="background-color: #007bff;" class=" navbar navbar-expand-sm">
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand" href="#">INICIO</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -13,7 +13,7 @@
                 <a class="nav-link  text-white w-100" [routerLink]='["/clienteregistro"]'>Registrar Cliente</a>
               </li>
               <li class="dropdown-item p-0 primary-color">
-                <a href="#" class="nav-link  text-white w-100">Consultar Cliente</a>
+                <a class="nav-link  text-white w-100" [routerLink]='["/clienteconsulta"]'>Consultar Cliente</a>
               </li>
             </ul>
           </li>
@@ -25,10 +25,10 @@
                 <a class="nav-link  text-white w-100" [routerLink]='["/reservagestion"]'>Gestion Reserva</a>
               </li>
               <li class="dropdown-item p-0 primary-color">
-                <a href="#" class="nav-link  text-white w-100" >Registrar Reserva</a>
+                <a [routerLink]='["/reservaregistro"]' class="nav-link  text-white w-100" >Registrar Reserva</a>
               </li>
               <li class="dropdown-item p-0 primary-color">
-                <a href="#" class="nav-link  text-white w-100">Consultar Reserva</a>
+                <a [routerLink]='["/reservaconsulta"]' class="nav-link  text-white w-100">Consultar Reserva</a>
               </li>
             </ul>
           </li>
@@ -37,10 +37,10 @@
             <ul style="top: 21px; left: 102%;"
               class="dropdown-menu mr-2 rounded-0  primary-color border-0 z-depth-1 r-100 ">
               <li class="dropdown-item p-0 primary-color">
-                <a href="#" class="nav-link  text-white w-100">Registrar Empleado</a>
+                <a [routerLink]='["/empleadoregistro"]' class="nav-link  text-white w-100">Registrar Empleado</a>
               </li>
               <li class="dropdown-item p-0 primary-color">
-                <a href="#" class="nav-link  text-white w-100">Consultar Empleado</a>
+                <a [routerLink]='["/empleadoconsulta"]' class="nav-link  text-white w-100">Consultar Empleado</a>
               </li>
             </ul>
           </li>
@@ -49,10 +49,10 @@
             <ul style="top: 28px; left: 102%;"
               class="dropdown-menu mr-2 rounded-0  primary-color border-0 z-depth-1 r-100 ">
               <li class="dropdown-item p-0 primary-color">
-                <a href="#" class="nav-link text-white w-100">Registrar Habitacion</a>
+                <a [routerLink]='["/habitacionregistro"]' class="nav-link text-white w-100">Registrar Habitacion</a>
               </li>
               <li class="dropdown-item p-0 primary-color">
-                <a href="#" class="nav-link text-white w-100">Consultar Habitacion</a>
+                <a [routerLink]='["/habitacionconsulta"]' class="nav-link text-white w-100">Consultar Habitacion</a>
               </li>
             </ul>
           </li>

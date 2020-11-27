@@ -6,7 +6,7 @@ namespace Entity
     public class Persona
     {
         [Key]
-        [Column(TypeName = "varchar(12)")]
+        [Column(TypeName = "varchar(4)")]
         public string Cedula { get; set; }
 
         [Column(TypeName = "varchar(12)")]

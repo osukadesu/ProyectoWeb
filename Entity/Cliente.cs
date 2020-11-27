@@ -18,7 +18,7 @@ namespace Entity
         [Column(TypeName = "varchar(4)")]
         public string IdHabitacion { get; set; }
 
-        [Column(TypeName = "varchar(12)")]
+        [Column(TypeName = "varchar(4)")]
         public string Ppal { get; set; }
     }
 }

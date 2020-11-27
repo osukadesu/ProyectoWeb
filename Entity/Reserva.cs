@@ -14,7 +14,7 @@ namespace Entity
         [NotMapped]
         public Cliente Cliente { get; set; }
 
-        [Column(TypeName = "varchar(12)")]
+        [Column(TypeName = "varchar(4)")]
         public string Cedula { get; set; }
 
         [NotMapped]

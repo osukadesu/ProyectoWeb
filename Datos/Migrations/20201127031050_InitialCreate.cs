@@ -26,7 +26,7 @@ namespace Datos.Migrations
                 name: "Personas",
                 columns: table => new
                 {
-                    Cedula = table.Column<string>(type: "varchar(12)", nullable: false),
+                    Cedula = table.Column<string>(type: "varchar(4)", nullable: false),
                     Nombre = table.Column<string>(type: "varchar(12)", nullable: true),
                     Apellido = table.Column<string>(type: "varchar(12)", nullable: true),
                     Sexo = table.Column<string>(type: "varchar(10)", nullable: true),
@@ -37,11 +37,11 @@ namespace Datos.Migrations
                     Discriminator = table.Column<string>(nullable: false),
                     IdCliente = table.Column<string>(type: "varchar(4)", nullable: true),
                     IdHabitacion = table.Column<string>(type: "varchar(4)", nullable: true),
-                    Ppal = table.Column<string>(type: "varchar(12)", nullable: true),
+                    Ppal = table.Column<string>(type: "varchar(4)", nullable: true),
                     IdEmpleado = table.Column<string>(type: "varchar(4)", nullable: true),
                     Cargo = table.Column<string>(type: "varchar(15)", nullable: true),
                     Jornada = table.Column<string>(type: "varchar(8)", nullable: true),
-                    Jefe = table.Column<string>(type: "varchar(12)", nullable: true)
+                    Jefe = table.Column<string>(type: "varchar(4)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -71,7 +71,7 @@ namespace Datos.Migrations
                 columns: table => new
                 {
                     IdReserva = table.Column<string>(type: "varchar(4)", nullable: false),
-                    Cedula = table.Column<string>(type: "varchar(12)", nullable: true),
+                    Cedula = table.Column<string>(type: "varchar(4)", nullable: true),
                     IdHabitacion = table.Column<string>(type: "varchar(4)", nullable: true),
                     FechaReserva = table.Column<DateTime>(type: "datetime", nullable: false),
                     Iva = table.Column<decimal>(type: "decimal", nullable: false),
